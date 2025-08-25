@@ -110,6 +110,11 @@ Class | Method | HTTP request | Description
 *DecisionContextsApi* | [**create_info_offer_questions_context_id_answers_post**](docs/DecisionContextsApi.md#create_info_offer_questions_context_id_answers_post) | **POST** /questions/{context_id}/answers | Create Info Offer
 *DecisionContextsApi* | [**delete_decision_context_questions_context_id_delete**](docs/DecisionContextsApi.md#delete_decision_context_questions_context_id_delete) | **DELETE** /questions/{context_id} | Delete Decision Context
 *DecisionContextsApi* | [**delete_info_offer_questions_context_id_answers_info_offer_id_delete**](docs/DecisionContextsApi.md#delete_info_offer_questions_context_id_answers_info_offer_id_delete) | **DELETE** /questions/{context_id}/answers/{info_offer_id} | Delete Info Offer
+*DecisionContextsApi* | [**list_current_user_decision_contexts_users_me_questions_get**](docs/DecisionContextsApi.md#list_current_user_decision_contexts_users_me_questions_get) | **GET** /users/me/questions | List Current User Decision Contexts
+*DecisionContextsApi* | [**list_current_user_info_offers_users_me_answers_get**](docs/DecisionContextsApi.md#list_current_user_info_offers_users_me_answers_get) | **GET** /users/me/answers | List Current User Info Offers
+*DecisionContextsApi* | [**list_decision_contexts_questions_get**](docs/DecisionContextsApi.md#list_decision_contexts_questions_get) | **GET** /questions | List Decision Contexts
+*DecisionContextsApi* | [**list_user_decision_contexts_users_user_id_questions_get**](docs/DecisionContextsApi.md#list_user_decision_contexts_users_user_id_questions_get) | **GET** /users/{user_id}/questions | List User Decision Contexts
+*DecisionContextsApi* | [**list_user_info_offers_users_user_id_answers_get**](docs/DecisionContextsApi.md#list_user_info_offers_users_user_id_answers_get) | **GET** /users/{user_id}/answers | List User Info Offers
 *DecisionContextsApi* | [**read_decision_context_questions_context_id_get**](docs/DecisionContextsApi.md#read_decision_context_questions_context_id_get) | **GET** /questions/{context_id} | Read Decision Context
 *DecisionContextsApi* | [**read_info_offer_questions_context_id_answers_info_offer_id_get**](docs/DecisionContextsApi.md#read_info_offer_questions_context_id_answers_info_offer_id_get) | **GET** /questions/{context_id}/answers/{info_offer_id} | Read Info Offer
 *DecisionContextsApi* | [**read_info_offers_for_decision_context_questions_context_id_answers_get**](docs/DecisionContextsApi.md#read_info_offers_for_decision_context_questions_context_id_answers_get) | **GET** /questions/{context_id}/answers | Read Info Offers For Decision Context
@@ -121,11 +126,27 @@ Class | Method | HTTP request | Description
 *InspectionApi* | [**get_job_status_jobs_job_id_status_get**](docs/InspectionApi.md#get_job_status_jobs_job_id_status_get) | **GET** /jobs/{job_id}/status | Get Job Status
 *InspectionApi* | [**inspect_context_questions_context_id_inspect_post**](docs/InspectionApi.md#inspect_context_questions_context_id_inspect_post) | **POST** /questions/{context_id}/inspect | Inspect Context
 *ProfilesApi* | [**create_human_buyer_buyers_post**](docs/ProfilesApi.md#create_human_buyer_buyers_post) | **POST** /buyers | Create Human Buyer
+*ProfilesApi* | [**create_human_seller_matcher_sellers_me_matchers_post**](docs/ProfilesApi.md#create_human_seller_matcher_sellers_me_matchers_post) | **POST** /sellers/me/matchers | Create Human Seller Matcher
 *ProfilesApi* | [**create_human_seller_sellers_post**](docs/ProfilesApi.md#create_human_seller_sellers_post) | **POST** /sellers | Create Human Seller
+*ProfilesApi* | [**delete_human_seller_matcher_sellers_me_matchers_matcher_id_delete**](docs/ProfilesApi.md#delete_human_seller_matcher_sellers_me_matchers_matcher_id_delete) | **DELETE** /sellers/me/matchers/{matcher_id} | Delete Human Seller Matcher
+*ProfilesApi* | [**get_buyer_stats_by_id_buyers_user_id_stats_get**](docs/ProfilesApi.md#get_buyer_stats_by_id_buyers_user_id_stats_get) | **GET** /buyers/{user_id}/stats | Get Buyer Stats By Id
+*ProfilesApi* | [**get_current_buyer_stats_buyers_me_stats_get**](docs/ProfilesApi.md#get_current_buyer_stats_buyers_me_stats_get) | **GET** /buyers/me/stats | Get Current Buyer Stats
+*ProfilesApi* | [**list_human_seller_matchers_sellers_me_matchers_get**](docs/ProfilesApi.md#list_human_seller_matchers_sellers_me_matchers_get) | **GET** /sellers/me/matchers | List Human Seller Matchers
 *ProfilesApi* | [**read_current_human_buyer_buyers_me_get**](docs/ProfilesApi.md#read_current_human_buyer_buyers_me_get) | **GET** /buyers/me | Read Current Human Buyer
+*ProfilesApi* | [**read_current_human_seller_sellers_me_get**](docs/ProfilesApi.md#read_current_human_seller_sellers_me_get) | **GET** /sellers/me | Read Current Human Seller
 *ProfilesApi* | [**update_current_human_buyer_buyers_me_put**](docs/ProfilesApi.md#update_current_human_buyer_buyers_me_put) | **PUT** /buyers/me | Update Current Human Buyer
+*ProfilesApi* | [**update_human_seller_matcher_sellers_me_matchers_matcher_id_put**](docs/ProfilesApi.md#update_human_seller_matcher_sellers_me_matchers_matcher_id_put) | **PUT** /sellers/me/matchers/{matcher_id} | Update Human Seller Matcher
+*UsersApi* | [**claim_daily_bonus_users_me_daily_bonus_post**](docs/UsersApi.md#claim_daily_bonus_users_me_daily_bonus_post) | **POST** /users/me/daily-bonus | Claim Daily Bonus
+*UsersApi* | [**get_api_keys_users_me_api_keys_get**](docs/UsersApi.md#get_api_keys_users_me_api_keys_get) | **GET** /users/me/api-keys | Get Api Keys
+*UsersApi* | [**get_current_user_purchases_users_me_purchases_get**](docs/UsersApi.md#get_current_user_purchases_users_me_purchases_get) | **GET** /users/me/purchases | Get Current User Purchases
+*UsersApi* | [**get_current_user_sales_users_me_sales_get**](docs/UsersApi.md#get_current_user_sales_users_me_sales_get) | **GET** /users/me/sales | Get Current User Sales
+*UsersApi* | [**get_current_user_users_me_get**](docs/UsersApi.md#get_current_user_users_me_get) | **GET** /users/me | Get Current User
+*UsersApi* | [**get_daily_bonus_status_users_me_daily_bonus_get**](docs/UsersApi.md#get_daily_bonus_status_users_me_daily_bonus_get) | **GET** /users/me/daily-bonus | Get Daily Bonus Status
+*UsersApi* | [**get_transactions_transactions_get**](docs/UsersApi.md#get_transactions_transactions_get) | **GET** /transactions | Get Transactions
+*UsersApi* | [**get_user_users_user_id_get**](docs/UsersApi.md#get_user_users_user_id_get) | **GET** /users/{user_id} | Get User
 *UsersApi* | [**get_users_users_get**](docs/UsersApi.md#get_users_users_get) | **GET** /users/ | Get Users
-*UsersApi* | [**users_current_user_users_me_get**](docs/UsersApi.md#users_current_user_users_me_get) | **GET** /users/me | Users:Current User
+*UsersApi* | [**update_api_keys_users_me_api_keys_put**](docs/UsersApi.md#update_api_keys_users_me_api_keys_put) | **PUT** /users/me/api-keys | Update Api Keys
+*UsersApi* | [**update_current_user_users_me_put**](docs/UsersApi.md#update_current_user_users_me_put) | **PUT** /users/me | Update Current User
 *UsersApi* | [**users_delete_user_users_id_delete**](docs/UsersApi.md#users_delete_user_users_id_delete) | **DELETE** /users/{id} | Users:Delete User
 *UsersApi* | [**users_patch_current_user_users_me_patch**](docs/UsersApi.md#users_patch_current_user_users_me_patch) | **PATCH** /users/me | Users:Patch Current User
 *UsersApi* | [**users_patch_user_users_id_patch**](docs/UsersApi.md#users_patch_user_users_id_patch) | **PATCH** /users/{id} | Users:Patch User

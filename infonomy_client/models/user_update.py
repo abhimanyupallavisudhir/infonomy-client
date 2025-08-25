@@ -32,7 +32,8 @@ class UserUpdate(BaseModel):
     is_superuser: Optional[StrictBool] = None
     is_verified: Optional[StrictBool] = None
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["password", "email", "is_active", "is_superuser", "is_verified", "username"]
+    api_keys: Optional[Dict[str, Any]] = None
+    __properties: ClassVar[List[str]] = ["password", "email", "is_active", "is_superuser", "is_verified", "username", "api_keys"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,6 +104,11 @@ class UserUpdate(BaseModel):
         if self.username is None and "username" in self.model_fields_set:
             _dict['username'] = None
 
+        # set to None if api_keys (nullable) is None
+        # and model_fields_set contains the field
+        if self.api_keys is None and "api_keys" in self.model_fields_set:
+            _dict['api_keys'] = None
+
         return _dict
 
     @classmethod
@@ -120,7 +126,8 @@ class UserUpdate(BaseModel):
             "is_active": obj.get("is_active"),
             "is_superuser": obj.get("is_superuser"),
             "is_verified": obj.get("is_verified"),
-            "username": obj.get("username")
+            "username": obj.get("username"),
+            "api_keys": obj.get("api_keys")
         })
         return _obj
 

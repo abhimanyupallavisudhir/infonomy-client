@@ -34,7 +34,8 @@ class UserRead(BaseModel):
     is_verified: Optional[StrictBool] = False
     username: StrictStr
     created_at: datetime
-    __properties: ClassVar[List[str]] = ["id", "email", "is_active", "is_superuser", "is_verified", "username", "created_at"]
+    api_keys: Optional[Dict[str, Any]] = None
+    __properties: ClassVar[List[str]] = ["id", "email", "is_active", "is_superuser", "is_verified", "username", "created_at", "api_keys"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,6 +76,11 @@ class UserRead(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if api_keys (nullable) is None
+        # and model_fields_set contains the field
+        if self.api_keys is None and "api_keys" in self.model_fields_set:
+            _dict['api_keys'] = None
+
         return _dict
 
     @classmethod
@@ -93,7 +99,8 @@ class UserRead(BaseModel):
             "is_superuser": obj.get("is_superuser") if obj.get("is_superuser") is not None else False,
             "is_verified": obj.get("is_verified") if obj.get("is_verified") is not None else False,
             "username": obj.get("username"),
-            "created_at": obj.get("created_at")
+            "created_at": obj.get("created_at"),
+            "api_keys": obj.get("api_keys")
         })
         return _obj
 

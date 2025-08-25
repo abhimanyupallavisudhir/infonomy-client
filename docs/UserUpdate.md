@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **is_superuser** | **bool** |  | [optional] 
 **is_verified** | **bool** |  | [optional] 
 **username** | **str** |  | [optional] 
+**api_keys** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

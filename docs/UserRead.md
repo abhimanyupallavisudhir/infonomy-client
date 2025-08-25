@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **is_verified** | **bool** |  | [optional] [default to False]
 **username** | **str** |  | 
 **created_at** | **datetime** |  | 
+**api_keys** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 
