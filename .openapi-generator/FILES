@@ -25,6 +25,7 @@ docs/HumanBuyerCreate.md
 docs/HumanBuyerRead.md
 docs/HumanBuyerUpdate.md
 docs/HumanSeller.md
+docs/HumanSellerRead.md
 docs/InboxApi.md
 docs/InfoOfferCreate.md
 docs/InfoOfferReadPrivate.md
@@ -40,6 +41,7 @@ docs/SellerMatcherRead.md
 docs/SellerMatcherUpdate.md
 docs/UserCreate.md
 docs/UserRead.md
+docs/UserReadPrivate.md
 docs/UserUpdate.md
 docs/UsersApi.md
 docs/ValidationError.md
@@ -78,6 +80,7 @@ infonomy_client/models/human_buyer_create.py
 infonomy_client/models/human_buyer_read.py
 infonomy_client/models/human_buyer_update.py
 infonomy_client/models/human_seller.py
+infonomy_client/models/human_seller_read.py
 infonomy_client/models/info_offer_create.py
 infonomy_client/models/info_offer_read_private.py
 infonomy_client/models/info_offer_read_public.py
@@ -90,6 +93,7 @@ infonomy_client/models/seller_matcher_read.py
 infonomy_client/models/seller_matcher_update.py
 infonomy_client/models/user_create.py
 infonomy_client/models/user_read.py
+infonomy_client/models/user_read_private.py
 infonomy_client/models/user_update.py
 infonomy_client/models/validation_error.py
 infonomy_client/models/validation_error_loc_inner.py

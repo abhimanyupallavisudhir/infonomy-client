@@ -140,13 +140,13 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**get_api_keys_users_me_api_keys_get**](docs/UsersApi.md#get_api_keys_users_me_api_keys_get) | **GET** /users/me/api-keys | Get Api Keys
 *UsersApi* | [**get_current_user_purchases_users_me_purchases_get**](docs/UsersApi.md#get_current_user_purchases_users_me_purchases_get) | **GET** /users/me/purchases | Get Current User Purchases
 *UsersApi* | [**get_current_user_sales_users_me_sales_get**](docs/UsersApi.md#get_current_user_sales_users_me_sales_get) | **GET** /users/me/sales | Get Current User Sales
-*UsersApi* | [**get_current_user_users_me_get**](docs/UsersApi.md#get_current_user_users_me_get) | **GET** /users/me | Get Current User
 *UsersApi* | [**get_daily_bonus_status_users_me_daily_bonus_get**](docs/UsersApi.md#get_daily_bonus_status_users_me_daily_bonus_get) | **GET** /users/me/daily-bonus | Get Daily Bonus Status
 *UsersApi* | [**get_transactions_transactions_get**](docs/UsersApi.md#get_transactions_transactions_get) | **GET** /transactions | Get Transactions
 *UsersApi* | [**get_user_users_user_id_get**](docs/UsersApi.md#get_user_users_user_id_get) | **GET** /users/{user_id} | Get User
 *UsersApi* | [**get_users_users_get**](docs/UsersApi.md#get_users_users_get) | **GET** /users/ | Get Users
 *UsersApi* | [**update_api_keys_users_me_api_keys_put**](docs/UsersApi.md#update_api_keys_users_me_api_keys_put) | **PUT** /users/me/api-keys | Update Api Keys
 *UsersApi* | [**update_current_user_users_me_put**](docs/UsersApi.md#update_current_user_users_me_put) | **PUT** /users/me | Update Current User
+*UsersApi* | [**users_current_user_users_me_get**](docs/UsersApi.md#users_current_user_users_me_get) | **GET** /users/me | Users:Current User
 *UsersApi* | [**users_delete_user_users_id_delete**](docs/UsersApi.md#users_delete_user_users_id_delete) | **DELETE** /users/{id} | Users:Delete User
 *UsersApi* | [**users_patch_current_user_users_me_patch**](docs/UsersApi.md#users_patch_current_user_users_me_patch) | **PATCH** /users/me | Users:Patch Current User
 *UsersApi* | [**users_patch_user_users_id_patch**](docs/UsersApi.md#users_patch_user_users_id_patch) | **PATCH** /users/{id} | Users:Patch User
@@ -173,6 +173,7 @@ Class | Method | HTTP request | Description
  - [HumanBuyerRead](docs/HumanBuyerRead.md)
  - [HumanBuyerUpdate](docs/HumanBuyerUpdate.md)
  - [HumanSeller](docs/HumanSeller.md)
+ - [HumanSellerRead](docs/HumanSellerRead.md)
  - [InfoOfferCreate](docs/InfoOfferCreate.md)
  - [InfoOfferReadPrivate](docs/InfoOfferReadPrivate.md)
  - [InfoOfferReadPublic](docs/InfoOfferReadPublic.md)
@@ -185,6 +186,7 @@ Class | Method | HTTP request | Description
  - [SellerMatcherUpdate](docs/SellerMatcherUpdate.md)
  - [UserCreate](docs/UserCreate.md)
  - [UserRead](docs/UserRead.md)
+ - [UserReadPrivate](docs/UserReadPrivate.md)
  - [UserUpdate](docs/UserUpdate.md)
  - [ValidationError](docs/ValidationError.md)
  - [ValidationErrorLocInner](docs/ValidationErrorLocInner.md)

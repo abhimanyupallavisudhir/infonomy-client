@@ -32,6 +32,7 @@ from infonomy_client.models.human_buyer_create import HumanBuyerCreate
 from infonomy_client.models.human_buyer_read import HumanBuyerRead
 from infonomy_client.models.human_buyer_update import HumanBuyerUpdate
 from infonomy_client.models.human_seller import HumanSeller
+from infonomy_client.models.human_seller_read import HumanSellerRead
 from infonomy_client.models.info_offer_create import InfoOfferCreate
 from infonomy_client.models.info_offer_read_private import InfoOfferReadPrivate
 from infonomy_client.models.info_offer_read_public import InfoOfferReadPublic
@@ -44,6 +45,7 @@ from infonomy_client.models.seller_matcher_read import SellerMatcherRead
 from infonomy_client.models.seller_matcher_update import SellerMatcherUpdate
 from infonomy_client.models.user_create import UserCreate
 from infonomy_client.models.user_read import UserRead
+from infonomy_client.models.user_read_private import UserReadPrivate
 from infonomy_client.models.user_update import UserUpdate
 from infonomy_client.models.validation_error import ValidationError
 from infonomy_client.models.validation_error_loc_inner import ValidationErrorLocInner

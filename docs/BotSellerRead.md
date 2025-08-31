@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**type** | **str** |  | 
 **matchers** | [**List[SellerMatcherRead]**](SellerMatcherRead.md) |  | 
+**type** | **str** |  | 
 **user_id** | **int** |  | 
 **info** | **str** |  | 
 **price** | **float** |  | 

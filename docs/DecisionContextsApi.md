@@ -484,7 +484,6 @@ List all public decision contexts (excluding recursive ones)
 
 ### Example
 
-* OAuth Authentication (OAuth2PasswordBearer):
 
 ```python
 import infonomy_client
@@ -498,12 +497,6 @@ configuration = infonomy_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
 with infonomy_client.ApiClient(configuration) as api_client:
@@ -537,7 +530,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -720,7 +713,6 @@ Read Decision Context
 
 ### Example
 
-* OAuth Authentication (OAuth2PasswordBearer):
 
 ```python
 import infonomy_client
@@ -734,12 +726,6 @@ configuration = infonomy_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
 with infonomy_client.ApiClient(configuration) as api_client:
@@ -771,7 +757,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+No authorization required
 
 ### HTTP request headers
 

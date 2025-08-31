@@ -27,7 +27,8 @@ class SellerMatcherRead(BaseModel):
     SellerMatcherRead
     """ # noqa: E501
     id: StrictInt
-    seller_id: StrictInt
+    human_seller_id: Optional[StrictInt]
+    bot_seller_id: Optional[StrictInt]
     keywords: Optional[List[StrictStr]]
     context_pages: Optional[List[StrictStr]]
     min_max_budget: Union[StrictFloat, StrictInt]
@@ -38,7 +39,7 @@ class SellerMatcherRead(BaseModel):
     buyer_llm_model: Optional[List[StrictStr]]
     buyer_system_prompt: Optional[List[StrictStr]]
     age_limit: Optional[StrictInt]
-    __properties: ClassVar[List[str]] = ["id", "seller_id", "keywords", "context_pages", "min_max_budget", "min_inspection_rate", "min_purchase_rate", "min_priority", "buyer_type", "buyer_llm_model", "buyer_system_prompt", "age_limit"]
+    __properties: ClassVar[List[str]] = ["id", "human_seller_id", "bot_seller_id", "keywords", "context_pages", "min_max_budget", "min_inspection_rate", "min_purchase_rate", "min_priority", "buyer_type", "buyer_llm_model", "buyer_system_prompt", "age_limit"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +80,16 @@ class SellerMatcherRead(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if human_seller_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.human_seller_id is None and "human_seller_id" in self.model_fields_set:
+            _dict['human_seller_id'] = None
+
+        # set to None if bot_seller_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.bot_seller_id is None and "bot_seller_id" in self.model_fields_set:
+            _dict['bot_seller_id'] = None
+
         # set to None if keywords (nullable) is None
         # and model_fields_set contains the field
         if self.keywords is None and "keywords" in self.model_fields_set:
@@ -122,7 +133,8 @@ class SellerMatcherRead(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "seller_id": obj.get("seller_id"),
+            "human_seller_id": obj.get("human_seller_id"),
+            "bot_seller_id": obj.get("bot_seller_id"),
             "keywords": obj.get("keywords"),
             "context_pages": obj.get("context_pages"),
             "min_max_budget": obj.get("min_max_budget"),

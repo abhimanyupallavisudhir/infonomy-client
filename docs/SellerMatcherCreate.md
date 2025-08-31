@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **keywords** | **List[str]** |  | [optional] 
 **context_pages** | **List[str]** |  | [optional] 
-**min_max_budget** | **float** |  | 
-**min_inspection_rate** | **float** |  | 
-**min_purchase_rate** | **float** |  | 
-**min_priority** | **int** |  | 
+**min_max_budget** | **float** |  | [optional] [default to 0.0]
+**min_inspection_rate** | **float** |  | [optional] [default to 0.0]
+**min_purchase_rate** | **float** |  | [optional] [default to 0.0]
+**min_priority** | **int** |  | [optional] [default to 0]
 **buyer_type** | **str** |  | [optional] 
 **buyer_llm_model** | **List[str]** |  | [optional] 
 **buyer_system_prompt** | **List[str]** |  | [optional] 

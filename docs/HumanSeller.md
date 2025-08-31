@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
 **user_id** | **int** |  | 
+**type** | **str** |  | [optional] [default to 'human_seller']
 
 ## Example
 

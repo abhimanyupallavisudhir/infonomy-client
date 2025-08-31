@@ -53,6 +53,7 @@ __all__ = [
     "HumanBuyerRead",
     "HumanBuyerUpdate",
     "HumanSeller",
+    "HumanSellerRead",
     "InfoOfferCreate",
     "InfoOfferReadPrivate",
     "InfoOfferReadPublic",
@@ -65,6 +66,7 @@ __all__ = [
     "SellerMatcherUpdate",
     "UserCreate",
     "UserRead",
+    "UserReadPrivate",
     "UserUpdate",
     "ValidationError",
     "ValidationErrorLocInner",
@@ -110,6 +112,7 @@ from infonomy_client.models.human_buyer_create import HumanBuyerCreate as HumanB
 from infonomy_client.models.human_buyer_read import HumanBuyerRead as HumanBuyerRead
 from infonomy_client.models.human_buyer_update import HumanBuyerUpdate as HumanBuyerUpdate
 from infonomy_client.models.human_seller import HumanSeller as HumanSeller
+from infonomy_client.models.human_seller_read import HumanSellerRead as HumanSellerRead
 from infonomy_client.models.info_offer_create import InfoOfferCreate as InfoOfferCreate
 from infonomy_client.models.info_offer_read_private import InfoOfferReadPrivate as InfoOfferReadPrivate
 from infonomy_client.models.info_offer_read_public import InfoOfferReadPublic as InfoOfferReadPublic
@@ -122,6 +125,7 @@ from infonomy_client.models.seller_matcher_read import SellerMatcherRead as Sell
 from infonomy_client.models.seller_matcher_update import SellerMatcherUpdate as SellerMatcherUpdate
 from infonomy_client.models.user_create import UserCreate as UserCreate
 from infonomy_client.models.user_read import UserRead as UserRead
+from infonomy_client.models.user_read_private import UserReadPrivate as UserReadPrivate
 from infonomy_client.models.user_update import UserUpdate as UserUpdate
 from infonomy_client.models.validation_error import ValidationError as ValidationError
 from infonomy_client.models.validation_error_loc_inner import ValidationErrorLocInner as ValidationErrorLocInner

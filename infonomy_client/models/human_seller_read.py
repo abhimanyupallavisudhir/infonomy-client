@@ -17,19 +17,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, StrictInt
+from typing import Any, ClassVar, Dict, List
+from infonomy_client.models.info_offer_read_public import InfoOfferReadPublic
+from infonomy_client.models.seller_matcher_read import SellerMatcherRead
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HumanSeller(BaseModel):
+class HumanSellerRead(BaseModel):
     """
-    HumanSeller
+    HumanSellerRead
     """ # noqa: E501
     id: StrictInt
     user_id: StrictInt
-    type: Optional[StrictStr] = 'human_seller'
-    __properties: ClassVar[List[str]] = ["id", "user_id", "type"]
+    matchers: List[SellerMatcherRead]
+    info_offers: List[InfoOfferReadPublic]
+    __properties: ClassVar[List[str]] = ["id", "user_id", "matchers", "info_offers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +52,7 @@ class HumanSeller(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HumanSeller from a JSON string"""
+        """Create an instance of HumanSellerRead from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,11 +73,25 @@ class HumanSeller(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in matchers (list)
+        _items = []
+        if self.matchers:
+            for _item_matchers in self.matchers:
+                if _item_matchers:
+                    _items.append(_item_matchers.to_dict())
+            _dict['matchers'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in info_offers (list)
+        _items = []
+        if self.info_offers:
+            for _item_info_offers in self.info_offers:
+                if _item_info_offers:
+                    _items.append(_item_info_offers.to_dict())
+            _dict['info_offers'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HumanSeller from a dict"""
+        """Create an instance of HumanSellerRead from a dict"""
         if obj is None:
             return None
 
@@ -84,7 +101,8 @@ class HumanSeller(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "user_id": obj.get("user_id"),
-            "type": obj.get("type") if obj.get("type") is not None else 'human_seller'
+            "matchers": [SellerMatcherRead.from_dict(_item) for _item in obj["matchers"]] if obj.get("matchers") is not None else None,
+            "info_offers": [InfoOfferReadPublic.from_dict(_item) for _item in obj["info_offers"]] if obj.get("info_offers") is not None else None
         })
         return _obj
 

@@ -22,6 +22,7 @@ from infonomy_client.models.human_buyer_create import HumanBuyerCreate
 from infonomy_client.models.human_buyer_read import HumanBuyerRead
 from infonomy_client.models.human_buyer_update import HumanBuyerUpdate
 from infonomy_client.models.human_seller import HumanSeller
+from infonomy_client.models.human_seller_read import HumanSellerRead
 from infonomy_client.models.seller_matcher_create import SellerMatcherCreate
 from infonomy_client.models.seller_matcher_read import SellerMatcherRead
 from infonomy_client.models.seller_matcher_update import SellerMatcherUpdate
@@ -2116,7 +2117,7 @@ class ProfilesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> HumanSeller:
+    ) -> HumanSellerRead:
         """Read Current Human Seller
 
         Get current user's seller profile
@@ -2151,7 +2152,7 @@ class ProfilesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HumanSeller",
+            '200': "HumanSellerRead",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2179,7 +2180,7 @@ class ProfilesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[HumanSeller]:
+    ) -> ApiResponse[HumanSellerRead]:
         """Read Current Human Seller
 
         Get current user's seller profile
@@ -2214,7 +2215,7 @@ class ProfilesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HumanSeller",
+            '200': "HumanSellerRead",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2277,7 +2278,7 @@ class ProfilesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "HumanSeller",
+            '200': "HumanSellerRead",
         }
         response_data = self.api_client.call_api(
             *_param,

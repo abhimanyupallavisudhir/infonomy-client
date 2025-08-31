@@ -28,10 +28,10 @@ class SellerMatcherCreate(BaseModel):
     """ # noqa: E501
     keywords: Optional[List[StrictStr]] = None
     context_pages: Optional[List[StrictStr]] = None
-    min_max_budget: Union[StrictFloat, StrictInt]
-    min_inspection_rate: Union[StrictFloat, StrictInt]
-    min_purchase_rate: Union[StrictFloat, StrictInt]
-    min_priority: StrictInt
+    min_max_budget: Optional[Union[StrictFloat, StrictInt]] = 0.0
+    min_inspection_rate: Optional[Union[StrictFloat, StrictInt]] = 0.0
+    min_purchase_rate: Optional[Union[StrictFloat, StrictInt]] = 0.0
+    min_priority: Optional[StrictInt] = 0
     buyer_type: Optional[StrictStr] = None
     buyer_llm_model: Optional[List[StrictStr]] = None
     buyer_system_prompt: Optional[List[StrictStr]] = None
@@ -121,10 +121,10 @@ class SellerMatcherCreate(BaseModel):
         _obj = cls.model_validate({
             "keywords": obj.get("keywords"),
             "context_pages": obj.get("context_pages"),
-            "min_max_budget": obj.get("min_max_budget"),
-            "min_inspection_rate": obj.get("min_inspection_rate"),
-            "min_purchase_rate": obj.get("min_purchase_rate"),
-            "min_priority": obj.get("min_priority"),
+            "min_max_budget": obj.get("min_max_budget") if obj.get("min_max_budget") is not None else 0.0,
+            "min_inspection_rate": obj.get("min_inspection_rate") if obj.get("min_inspection_rate") is not None else 0.0,
+            "min_purchase_rate": obj.get("min_purchase_rate") if obj.get("min_purchase_rate") is not None else 0.0,
+            "min_priority": obj.get("min_priority") if obj.get("min_priority") is not None else 0,
             "buyer_type": obj.get("buyer_type"),
             "buyer_llm_model": obj.get("buyer_llm_model"),
             "buyer_system_prompt": obj.get("buyer_system_prompt"),

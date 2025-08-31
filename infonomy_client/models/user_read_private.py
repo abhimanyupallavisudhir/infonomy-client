@@ -26,9 +26,9 @@ from infonomy_client.models.human_seller_read import HumanSellerRead
 from typing import Optional, Set
 from typing_extensions import Self
 
-class UserRead(BaseModel):
+class UserReadPrivate(BaseModel):
     """
-    UserRead
+    UserReadPrivate
     """ # noqa: E501
     id: StrictInt
     email: StrictStr
@@ -44,7 +44,8 @@ class UserRead(BaseModel):
     buyer_profile: Optional[HumanBuyerRead]
     seller_profile: Optional[HumanSellerRead]
     bot_sellers: Optional[List[BotSellerRead]]
-    __properties: ClassVar[List[str]] = ["id", "email", "is_active", "is_superuser", "is_verified", "username", "created_at", "last_login_date", "balance", "available_balance", "daily_bonus_amount", "buyer_profile", "seller_profile", "bot_sellers"]
+    api_keys: Dict[str, Any]
+    __properties: ClassVar[List[str]] = ["id", "email", "is_active", "is_superuser", "is_verified", "username", "created_at", "last_login_date", "balance", "available_balance", "daily_bonus_amount", "buyer_profile", "seller_profile", "bot_sellers", "api_keys"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -64,7 +65,7 @@ class UserRead(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of UserRead from a JSON string"""
+        """Create an instance of UserReadPrivate from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -122,7 +123,7 @@ class UserRead(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of UserRead from a dict"""
+        """Create an instance of UserReadPrivate from a dict"""
         if obj is None:
             return None
 
@@ -143,7 +144,8 @@ class UserRead(BaseModel):
             "daily_bonus_amount": obj.get("daily_bonus_amount"),
             "buyer_profile": HumanBuyerRead.from_dict(obj["buyer_profile"]) if obj.get("buyer_profile") is not None else None,
             "seller_profile": HumanSellerRead.from_dict(obj["seller_profile"]) if obj.get("seller_profile") is not None else None,
-            "bot_sellers": [BotSellerRead.from_dict(_item) for _item in obj["bot_sellers"]] if obj.get("bot_sellers") is not None else None
+            "bot_sellers": [BotSellerRead.from_dict(_item) for _item in obj["bot_sellers"]] if obj.get("bot_sellers") is not None else None,
+            "api_keys": obj.get("api_keys")
         })
         return _obj
 

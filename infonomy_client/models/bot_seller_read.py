@@ -28,14 +28,14 @@ class BotSellerRead(BaseModel):
     BotSellerRead
     """ # noqa: E501
     id: StrictInt
-    type: StrictStr
     matchers: List[SellerMatcherRead]
+    type: StrictStr
     user_id: StrictInt
     info: Optional[StrictStr]
     price: Optional[Union[StrictFloat, StrictInt]]
     llm_model: Optional[StrictStr]
     llm_prompt: Optional[StrictStr]
-    __properties: ClassVar[List[str]] = ["id", "type", "matchers", "user_id", "info", "price", "llm_model", "llm_prompt"]
+    __properties: ClassVar[List[str]] = ["id", "matchers", "type", "user_id", "info", "price", "llm_model", "llm_prompt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,8 +116,8 @@ class BotSellerRead(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "type": obj.get("type"),
             "matchers": [SellerMatcherRead.from_dict(_item) for _item in obj["matchers"]] if obj.get("matchers") is not None else None,
+            "type": obj.get("type"),
             "user_id": obj.get("user_id"),
             "info": obj.get("info"),
             "price": obj.get("price"),

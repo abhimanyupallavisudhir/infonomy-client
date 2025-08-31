@@ -599,7 +599,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **read_current_human_seller_sellers_me_get**
-> HumanSeller read_current_human_seller_sellers_me_get()
+> HumanSellerRead read_current_human_seller_sellers_me_get()
 
 Read Current Human Seller
 
@@ -611,7 +611,7 @@ Get current user's seller profile
 
 ```python
 import infonomy_client
-from infonomy_client.models.human_seller import HumanSeller
+from infonomy_client.models.human_seller_read import HumanSellerRead
 from infonomy_client.rest import ApiException
 from pprint import pprint
 
@@ -650,7 +650,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**HumanSeller**](HumanSeller.md)
+[**HumanSellerRead**](HumanSellerRead.md)
 
 ### Authorization
 

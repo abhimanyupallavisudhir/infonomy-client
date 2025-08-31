@@ -6,7 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**seller_id** | **int** |  | 
+**human_seller_id** | **int** |  | 
+**bot_seller_id** | **int** |  | 
 **keywords** | **List[str]** |  | 
 **context_pages** | **List[str]** |  | 
 **min_max_budget** | **float** |  | 
