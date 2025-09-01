@@ -29,10 +29,9 @@ class HumanSellerRead(BaseModel):
     HumanSellerRead
     """ # noqa: E501
     id: StrictInt
-    user_id: StrictInt
     matchers: List[SellerMatcherRead]
     info_offers: List[InfoOfferReadPublic]
-    __properties: ClassVar[List[str]] = ["id", "user_id", "matchers", "info_offers"]
+    __properties: ClassVar[List[str]] = ["id", "matchers", "info_offers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -100,7 +99,6 @@ class HumanSellerRead(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "user_id": obj.get("user_id"),
             "matchers": [SellerMatcherRead.from_dict(_item) for _item in obj["matchers"]] if obj.get("matchers") is not None else None,
             "info_offers": [InfoOfferReadPublic.from_dict(_item) for _item in obj["info_offers"]] if obj.get("info_offers") is not None else None
         })

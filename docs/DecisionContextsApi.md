@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**read_decision_context_questions_context_id_get**](DecisionContextsApi.md#read_decision_context_questions_context_id_get) | **GET** /questions/{context_id} | Read Decision Context
 [**read_info_offer_questions_context_id_answers_info_offer_id_get**](DecisionContextsApi.md#read_info_offer_questions_context_id_answers_info_offer_id_get) | **GET** /questions/{context_id}/answers/{info_offer_id} | Read Info Offer
 [**read_info_offers_for_decision_context_questions_context_id_answers_get**](DecisionContextsApi.md#read_info_offers_for_decision_context_questions_context_id_answers_get) | **GET** /questions/{context_id}/answers | Read Info Offers For Decision Context
+[**read_info_offers_private_for_decision_context_questions_context_id_answers_private_get**](DecisionContextsApi.md#read_info_offers_private_for_decision_context_questions_context_id_answers_private_get) | **GET** /questions/{context_id}/answers_private | Read Info Offers Private For Decision Context
+[**read_info_offers_public_for_decision_context_questions_context_id_answers_public_get**](DecisionContextsApi.md#read_info_offers_public_for_decision_context_questions_context_id_answers_public_get) | **GET** /questions/{context_id}/answers_public | Read Info Offers Public For Decision Context
 [**update_decision_context_questions_context_id_patch**](DecisionContextsApi.md#update_decision_context_questions_context_id_patch) | **PATCH** /questions/{context_id} | Update Decision Context
 [**update_info_offer_questions_context_id_answers_info_offer_id_patch**](DecisionContextsApi.md#update_info_offer_questions_context_id_answers_info_offer_id_patch) | **PATCH** /questions/{context_id}/answers/{info_offer_id} | Update Info Offer
 
@@ -555,7 +557,6 @@ List decision contexts by specific user (excluding recursive ones)
 
 ### Example
 
-* OAuth Authentication (OAuth2PasswordBearer):
 
 ```python
 import infonomy_client
@@ -569,12 +570,6 @@ configuration = infonomy_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
 with infonomy_client.ApiClient(configuration) as api_client:
@@ -610,7 +605,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -904,6 +899,154 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List[ReadInfoOffersForDecisionContextQuestionsContextIdAnswersGet200ResponseInner]**](ReadInfoOffersForDecisionContextQuestionsContextIdAnswersGet200ResponseInner.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **read_info_offers_private_for_decision_context_questions_context_id_answers_private_get**
+> List[InfoOfferReadPrivate] read_info_offers_private_for_decision_context_questions_context_id_answers_private_get(context_id)
+
+Read Info Offers Private For Decision Context
+
+### Example
+
+* OAuth Authentication (OAuth2PasswordBearer):
+
+```python
+import infonomy_client
+from infonomy_client.models.info_offer_read_private import InfoOfferReadPrivate
+from infonomy_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = infonomy_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with infonomy_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = infonomy_client.DecisionContextsApi(api_client)
+    context_id = 56 # int | 
+
+    try:
+        # Read Info Offers Private For Decision Context
+        api_response = api_instance.read_info_offers_private_for_decision_context_questions_context_id_answers_private_get(context_id)
+        print("The response of DecisionContextsApi->read_info_offers_private_for_decision_context_questions_context_id_answers_private_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DecisionContextsApi->read_info_offers_private_for_decision_context_questions_context_id_answers_private_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **context_id** | **int**|  | 
+
+### Return type
+
+[**List[InfoOfferReadPrivate]**](InfoOfferReadPrivate.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **read_info_offers_public_for_decision_context_questions_context_id_answers_public_get**
+> List[InfoOfferReadPublic] read_info_offers_public_for_decision_context_questions_context_id_answers_public_get(context_id)
+
+Read Info Offers Public For Decision Context
+
+### Example
+
+* OAuth Authentication (OAuth2PasswordBearer):
+
+```python
+import infonomy_client
+from infonomy_client.models.info_offer_read_public import InfoOfferReadPublic
+from infonomy_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = infonomy_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with infonomy_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = infonomy_client.DecisionContextsApi(api_client)
+    context_id = 56 # int | 
+
+    try:
+        # Read Info Offers Public For Decision Context
+        api_response = api_instance.read_info_offers_public_for_decision_context_questions_context_id_answers_public_get(context_id)
+        print("The response of DecisionContextsApi->read_info_offers_public_for_decision_context_questions_context_id_answers_public_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DecisionContextsApi->read_info_offers_public_for_decision_context_questions_context_id_answers_public_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **context_id** | **int**|  | 
+
+### Return type
+
+[**List[InfoOfferReadPublic]**](InfoOfferReadPublic.md)
 
 ### Authorization
 

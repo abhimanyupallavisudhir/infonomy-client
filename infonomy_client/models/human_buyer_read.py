@@ -27,7 +27,7 @@ class HumanBuyerRead(BaseModel):
     """
     HumanBuyerRead
     """ # noqa: E501
-    user_id: StrictInt
+    id: StrictInt
     default_child_llm: LLMBuyerType
     default_max_budget: Union[StrictFloat, StrictInt]
     num_queries: Dict[str, StrictInt]
@@ -35,7 +35,7 @@ class HumanBuyerRead(BaseModel):
     num_purchased: Dict[str, StrictInt]
     inspection_rate: Dict[str, Union[StrictFloat, StrictInt]]
     purchase_rate: Dict[str, Union[StrictFloat, StrictInt]]
-    __properties: ClassVar[List[str]] = ["user_id", "default_child_llm", "default_max_budget", "num_queries", "num_inspected", "num_purchased", "inspection_rate", "purchase_rate"]
+    __properties: ClassVar[List[str]] = ["id", "default_child_llm", "default_max_budget", "num_queries", "num_inspected", "num_purchased", "inspection_rate", "purchase_rate"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,7 +91,7 @@ class HumanBuyerRead(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "user_id": obj.get("user_id"),
+            "id": obj.get("id"),
             "default_child_llm": LLMBuyerType.from_dict(obj["default_child_llm"]) if obj.get("default_child_llm") is not None else None,
             "default_max_budget": obj.get("default_max_budget"),
             "num_queries": obj.get("num_queries"),

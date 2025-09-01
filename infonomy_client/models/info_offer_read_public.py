@@ -28,11 +28,14 @@ class InfoOfferReadPublic(BaseModel):
     InfoOfferReadPublic
     """ # noqa: E501
     id: StrictInt
-    seller_id: StrictInt
+    human_seller_id: Optional[StrictInt]
+    bot_seller_id: Optional[StrictInt]
+    seller_type: StrictStr
+    context_id: StrictInt
     public_info: Optional[StrictStr]
     price: Union[StrictFloat, StrictInt]
     created_at: datetime
-    __properties: ClassVar[List[str]] = ["id", "seller_id", "public_info", "price", "created_at"]
+    __properties: ClassVar[List[str]] = ["id", "human_seller_id", "bot_seller_id", "seller_type", "context_id", "public_info", "price", "created_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,6 +76,16 @@ class InfoOfferReadPublic(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if human_seller_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.human_seller_id is None and "human_seller_id" in self.model_fields_set:
+            _dict['human_seller_id'] = None
+
+        # set to None if bot_seller_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.bot_seller_id is None and "bot_seller_id" in self.model_fields_set:
+            _dict['bot_seller_id'] = None
+
         # set to None if public_info (nullable) is None
         # and model_fields_set contains the field
         if self.public_info is None and "public_info" in self.model_fields_set:
@@ -91,7 +104,10 @@ class InfoOfferReadPublic(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "seller_id": obj.get("seller_id"),
+            "human_seller_id": obj.get("human_seller_id"),
+            "bot_seller_id": obj.get("bot_seller_id"),
+            "seller_type": obj.get("seller_type"),
+            "context_id": obj.get("context_id"),
             "public_info": obj.get("public_info"),
             "price": obj.get("price"),
             "created_at": obj.get("created_at")

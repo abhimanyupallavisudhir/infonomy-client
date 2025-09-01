@@ -27,9 +27,8 @@ class HumanSeller(BaseModel):
     HumanSeller
     """ # noqa: E501
     id: StrictInt
-    user_id: StrictInt
     type: Optional[StrictStr] = 'human_seller'
-    __properties: ClassVar[List[str]] = ["id", "user_id", "type"]
+    __properties: ClassVar[List[str]] = ["id", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +82,6 @@ class HumanSeller(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "user_id": obj.get("user_id"),
             "type": obj.get("type") if obj.get("type") is not None else 'human_seller'
         })
         return _obj

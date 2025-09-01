@@ -6,7 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**seller_id** | **int** |  | 
+**human_seller_id** | **int** |  | 
+**bot_seller_id** | **int** |  | 
+**seller_type** | **str** |  | 
+**context_id** | **int** |  | 
 **public_info** | **str** |  | 
 **price** | **float** |  | 
 **created_at** | **datetime** |  | 

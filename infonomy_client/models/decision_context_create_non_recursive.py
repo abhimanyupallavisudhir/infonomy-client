@@ -29,9 +29,10 @@ class DecisionContextCreateNonRecursive(BaseModel):
     query: Optional[StrictStr] = None
     context_pages: Optional[List[StrictStr]] = None
     max_budget: Union[StrictFloat, StrictInt]
-    seller_ids: Optional[List[StrictInt]] = None
+    human_seller_ids: Optional[List[StrictInt]] = None
+    bot_seller_ids: Optional[List[StrictInt]] = None
     priority: Optional[StrictInt] = 0
-    __properties: ClassVar[List[str]] = ["query", "context_pages", "max_budget", "seller_ids", "priority"]
+    __properties: ClassVar[List[str]] = ["query", "context_pages", "max_budget", "human_seller_ids", "bot_seller_ids", "priority"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,10 +83,15 @@ class DecisionContextCreateNonRecursive(BaseModel):
         if self.context_pages is None and "context_pages" in self.model_fields_set:
             _dict['context_pages'] = None
 
-        # set to None if seller_ids (nullable) is None
+        # set to None if human_seller_ids (nullable) is None
         # and model_fields_set contains the field
-        if self.seller_ids is None and "seller_ids" in self.model_fields_set:
-            _dict['seller_ids'] = None
+        if self.human_seller_ids is None and "human_seller_ids" in self.model_fields_set:
+            _dict['human_seller_ids'] = None
+
+        # set to None if bot_seller_ids (nullable) is None
+        # and model_fields_set contains the field
+        if self.bot_seller_ids is None and "bot_seller_ids" in self.model_fields_set:
+            _dict['bot_seller_ids'] = None
 
         return _dict
 
@@ -102,7 +108,8 @@ class DecisionContextCreateNonRecursive(BaseModel):
             "query": obj.get("query"),
             "context_pages": obj.get("context_pages"),
             "max_budget": obj.get("max_budget"),
-            "seller_ids": obj.get("seller_ids"),
+            "human_seller_ids": obj.get("human_seller_ids"),
+            "bot_seller_ids": obj.get("bot_seller_ids"),
             "priority": obj.get("priority") if obj.get("priority") is not None else 0
         })
         return _obj

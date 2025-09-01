@@ -32,11 +32,12 @@ class DecisionContextRead(BaseModel):
     context_pages: Optional[List[StrictStr]]
     buyer_id: StrictInt
     max_budget: Union[StrictFloat, StrictInt]
-    seller_ids: Optional[List[StrictInt]]
+    human_seller_ids: Optional[List[StrictInt]]
+    bot_seller_ids: Optional[List[StrictInt]]
     priority: StrictInt
     created_at: datetime
     parent: Optional[DecisionContextRead]
-    __properties: ClassVar[List[str]] = ["id", "query", "context_pages", "buyer_id", "max_budget", "seller_ids", "priority", "created_at", "parent"]
+    __properties: ClassVar[List[str]] = ["id", "query", "context_pages", "buyer_id", "max_budget", "human_seller_ids", "bot_seller_ids", "priority", "created_at", "parent"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,10 +91,15 @@ class DecisionContextRead(BaseModel):
         if self.context_pages is None and "context_pages" in self.model_fields_set:
             _dict['context_pages'] = None
 
-        # set to None if seller_ids (nullable) is None
+        # set to None if human_seller_ids (nullable) is None
         # and model_fields_set contains the field
-        if self.seller_ids is None and "seller_ids" in self.model_fields_set:
-            _dict['seller_ids'] = None
+        if self.human_seller_ids is None and "human_seller_ids" in self.model_fields_set:
+            _dict['human_seller_ids'] = None
+
+        # set to None if bot_seller_ids (nullable) is None
+        # and model_fields_set contains the field
+        if self.bot_seller_ids is None and "bot_seller_ids" in self.model_fields_set:
+            _dict['bot_seller_ids'] = None
 
         # set to None if parent (nullable) is None
         # and model_fields_set contains the field
@@ -117,7 +123,8 @@ class DecisionContextRead(BaseModel):
             "context_pages": obj.get("context_pages"),
             "buyer_id": obj.get("buyer_id"),
             "max_budget": obj.get("max_budget"),
-            "seller_ids": obj.get("seller_ids"),
+            "human_seller_ids": obj.get("human_seller_ids"),
+            "bot_seller_ids": obj.get("bot_seller_ids"),
             "priority": obj.get("priority"),
             "created_at": obj.get("created_at"),
             "parent": DecisionContextRead.from_dict(obj["parent"]) if obj.get("parent") is not None else None

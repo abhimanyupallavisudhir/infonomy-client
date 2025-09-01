@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_id** | **int** |  | 
+**id** | **int** |  | 
 **default_child_llm** | [**LLMBuyerType**](LLMBuyerType.md) |  | 
 **default_max_budget** | **float** |  | 
 **num_queries** | **Dict[str, int]** |  | 

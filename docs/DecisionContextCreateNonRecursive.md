@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **query** | **str** |  | [optional] 
 **context_pages** | **List[str]** |  | [optional] 
 **max_budget** | **float** |  | 
-**seller_ids** | **List[int]** |  | [optional] 
+**human_seller_ids** | **List[int]** |  | [optional] 
+**bot_seller_ids** | **List[int]** |  | [optional] 
 **priority** | **int** |  | [optional] [default to 0]
 
 ## Example

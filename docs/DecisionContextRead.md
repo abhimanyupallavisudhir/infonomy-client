@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **context_pages** | **List[str]** |  | 
 **buyer_id** | **int** |  | 
 **max_budget** | **float** |  | 
-**seller_ids** | **List[int]** |  | 
+**human_seller_ids** | **List[int]** |  | 
+**bot_seller_ids** | **List[int]** |  | 
 **priority** | **int** |  | 
 **created_at** | **datetime** |  | 
 **parent** | [**DecisionContextRead**](DecisionContextRead.md) |  | 

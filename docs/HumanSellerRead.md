@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**user_id** | **int** |  | 
 **matchers** | [**List[SellerMatcherRead]**](SellerMatcherRead.md) |  | 
 **info_offers** | [**List[InfoOfferReadPublic]**](InfoOfferReadPublic.md) |  | 
 
