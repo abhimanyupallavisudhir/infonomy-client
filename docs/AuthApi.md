@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**auth_jwt_login_auth_jwt_login_post**](AuthApi.md#auth_jwt_login_auth_jwt_login_post) | **POST** /auth/jwt/login | Auth:Jwt.Login
-[**auth_jwt_logout_auth_jwt_logout_post**](AuthApi.md#auth_jwt_logout_auth_jwt_logout_post) | **POST** /auth/jwt/logout | Auth:Jwt.Logout
-[**register_register_auth_register_post**](AuthApi.md#register_register_auth_register_post) | **POST** /auth/register | Register:Register
-[**reset_forgot_password_auth_forgot_password_post**](AuthApi.md#reset_forgot_password_auth_forgot_password_post) | **POST** /auth/forgot-password | Reset:Forgot Password
-[**reset_reset_password_auth_reset_password_post**](AuthApi.md#reset_reset_password_auth_reset_password_post) | **POST** /auth/reset-password | Reset:Reset Password
+[**auth_jwt_login_api_auth_jwt_login_post**](AuthApi.md#auth_jwt_login_api_auth_jwt_login_post) | **POST** /api/auth/jwt/login | Auth:Jwt.Login
+[**auth_jwt_logout_api_auth_jwt_logout_post**](AuthApi.md#auth_jwt_logout_api_auth_jwt_logout_post) | **POST** /api/auth/jwt/logout | Auth:Jwt.Logout
+[**register_register_api_auth_register_post**](AuthApi.md#register_register_api_auth_register_post) | **POST** /api/auth/register | Register:Register
+[**reset_forgot_password_api_auth_forgot_password_post**](AuthApi.md#reset_forgot_password_api_auth_forgot_password_post) | **POST** /api/auth/forgot-password | Reset:Forgot Password
+[**reset_reset_password_api_auth_reset_password_post**](AuthApi.md#reset_reset_password_api_auth_reset_password_post) | **POST** /api/auth/reset-password | Reset:Reset Password
 [**verify_request_token_auth_request_verify_token_post**](AuthApi.md#verify_request_token_auth_request_verify_token_post) | **POST** /auth/request-verify-token | Verify:Request-Token
 [**verify_verify_auth_verify_post**](AuthApi.md#verify_verify_auth_verify_post) | **POST** /auth/verify | Verify:Verify
 
 
-# **auth_jwt_login_auth_jwt_login_post**
-> BearerResponse auth_jwt_login_auth_jwt_login_post(username, password, grant_type=grant_type, scope=scope, client_id=client_id, client_secret=client_secret)
+# **auth_jwt_login_api_auth_jwt_login_post**
+> BearerResponse auth_jwt_login_api_auth_jwt_login_post(username, password, grant_type=grant_type, scope=scope, client_id=client_id, client_secret=client_secret)
 
 Auth:Jwt.Login
 
@@ -47,11 +47,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Auth:Jwt.Login
-        api_response = api_instance.auth_jwt_login_auth_jwt_login_post(username, password, grant_type=grant_type, scope=scope, client_id=client_id, client_secret=client_secret)
-        print("The response of AuthApi->auth_jwt_login_auth_jwt_login_post:\n")
+        api_response = api_instance.auth_jwt_login_api_auth_jwt_login_post(username, password, grant_type=grant_type, scope=scope, client_id=client_id, client_secret=client_secret)
+        print("The response of AuthApi->auth_jwt_login_api_auth_jwt_login_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthApi->auth_jwt_login_auth_jwt_login_post: %s\n" % e)
+        print("Exception when calling AuthApi->auth_jwt_login_api_auth_jwt_login_post: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **auth_jwt_logout_auth_jwt_logout_post**
-> object auth_jwt_logout_auth_jwt_logout_post()
+# **auth_jwt_logout_api_auth_jwt_logout_post**
+> object auth_jwt_logout_api_auth_jwt_logout_post()
 
 Auth:Jwt.Logout
 
@@ -125,11 +125,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Auth:Jwt.Logout
-        api_response = api_instance.auth_jwt_logout_auth_jwt_logout_post()
-        print("The response of AuthApi->auth_jwt_logout_auth_jwt_logout_post:\n")
+        api_response = api_instance.auth_jwt_logout_api_auth_jwt_logout_post()
+        print("The response of AuthApi->auth_jwt_logout_api_auth_jwt_logout_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthApi->auth_jwt_logout_auth_jwt_logout_post: %s\n" % e)
+        print("Exception when calling AuthApi->auth_jwt_logout_api_auth_jwt_logout_post: %s\n" % e)
 ```
 
 
@@ -160,8 +160,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **register_register_auth_register_post**
-> UserRead register_register_auth_register_post(user_create)
+# **register_register_api_auth_register_post**
+> UserRead register_register_api_auth_register_post(user_create)
 
 Register:Register
 
@@ -190,11 +190,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Register:Register
-        api_response = api_instance.register_register_auth_register_post(user_create)
-        print("The response of AuthApi->register_register_auth_register_post:\n")
+        api_response = api_instance.register_register_api_auth_register_post(user_create)
+        print("The response of AuthApi->register_register_api_auth_register_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthApi->register_register_auth_register_post: %s\n" % e)
+        print("Exception when calling AuthApi->register_register_api_auth_register_post: %s\n" % e)
 ```
 
 
@@ -229,8 +229,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reset_forgot_password_auth_forgot_password_post**
-> object reset_forgot_password_auth_forgot_password_post(body_reset_forgot_password_auth_forgot_password_post)
+# **reset_forgot_password_api_auth_forgot_password_post**
+> object reset_forgot_password_api_auth_forgot_password_post(body_reset_forgot_password_api_auth_forgot_password_post)
 
 Reset:Forgot Password
 
@@ -239,7 +239,7 @@ Reset:Forgot Password
 
 ```python
 import infonomy_client
-from infonomy_client.models.body_reset_forgot_password_auth_forgot_password_post import BodyResetForgotPasswordAuthForgotPasswordPost
+from infonomy_client.models.body_reset_forgot_password_api_auth_forgot_password_post import BodyResetForgotPasswordApiAuthForgotPasswordPost
 from infonomy_client.rest import ApiException
 from pprint import pprint
 
@@ -254,15 +254,15 @@ configuration = infonomy_client.Configuration(
 with infonomy_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = infonomy_client.AuthApi(api_client)
-    body_reset_forgot_password_auth_forgot_password_post = infonomy_client.BodyResetForgotPasswordAuthForgotPasswordPost() # BodyResetForgotPasswordAuthForgotPasswordPost | 
+    body_reset_forgot_password_api_auth_forgot_password_post = infonomy_client.BodyResetForgotPasswordApiAuthForgotPasswordPost() # BodyResetForgotPasswordApiAuthForgotPasswordPost | 
 
     try:
         # Reset:Forgot Password
-        api_response = api_instance.reset_forgot_password_auth_forgot_password_post(body_reset_forgot_password_auth_forgot_password_post)
-        print("The response of AuthApi->reset_forgot_password_auth_forgot_password_post:\n")
+        api_response = api_instance.reset_forgot_password_api_auth_forgot_password_post(body_reset_forgot_password_api_auth_forgot_password_post)
+        print("The response of AuthApi->reset_forgot_password_api_auth_forgot_password_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthApi->reset_forgot_password_auth_forgot_password_post: %s\n" % e)
+        print("Exception when calling AuthApi->reset_forgot_password_api_auth_forgot_password_post: %s\n" % e)
 ```
 
 
@@ -272,7 +272,7 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body_reset_forgot_password_auth_forgot_password_post** | [**BodyResetForgotPasswordAuthForgotPasswordPost**](BodyResetForgotPasswordAuthForgotPasswordPost.md)|  | 
+ **body_reset_forgot_password_api_auth_forgot_password_post** | [**BodyResetForgotPasswordApiAuthForgotPasswordPost**](BodyResetForgotPasswordApiAuthForgotPasswordPost.md)|  | 
 
 ### Return type
 
@@ -296,8 +296,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reset_reset_password_auth_reset_password_post**
-> object reset_reset_password_auth_reset_password_post(body_reset_reset_password_auth_reset_password_post)
+# **reset_reset_password_api_auth_reset_password_post**
+> object reset_reset_password_api_auth_reset_password_post(body_reset_reset_password_api_auth_reset_password_post)
 
 Reset:Reset Password
 
@@ -306,7 +306,7 @@ Reset:Reset Password
 
 ```python
 import infonomy_client
-from infonomy_client.models.body_reset_reset_password_auth_reset_password_post import BodyResetResetPasswordAuthResetPasswordPost
+from infonomy_client.models.body_reset_reset_password_api_auth_reset_password_post import BodyResetResetPasswordApiAuthResetPasswordPost
 from infonomy_client.rest import ApiException
 from pprint import pprint
 
@@ -321,15 +321,15 @@ configuration = infonomy_client.Configuration(
 with infonomy_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = infonomy_client.AuthApi(api_client)
-    body_reset_reset_password_auth_reset_password_post = infonomy_client.BodyResetResetPasswordAuthResetPasswordPost() # BodyResetResetPasswordAuthResetPasswordPost | 
+    body_reset_reset_password_api_auth_reset_password_post = infonomy_client.BodyResetResetPasswordApiAuthResetPasswordPost() # BodyResetResetPasswordApiAuthResetPasswordPost | 
 
     try:
         # Reset:Reset Password
-        api_response = api_instance.reset_reset_password_auth_reset_password_post(body_reset_reset_password_auth_reset_password_post)
-        print("The response of AuthApi->reset_reset_password_auth_reset_password_post:\n")
+        api_response = api_instance.reset_reset_password_api_auth_reset_password_post(body_reset_reset_password_api_auth_reset_password_post)
+        print("The response of AuthApi->reset_reset_password_api_auth_reset_password_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthApi->reset_reset_password_auth_reset_password_post: %s\n" % e)
+        print("Exception when calling AuthApi->reset_reset_password_api_auth_reset_password_post: %s\n" % e)
 ```
 
 
@@ -339,7 +339,7 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body_reset_reset_password_auth_reset_password_post** | [**BodyResetResetPasswordAuthResetPasswordPost**](BodyResetResetPasswordAuthResetPasswordPost.md)|  | 
+ **body_reset_reset_password_api_auth_reset_password_post** | [**BodyResetResetPasswordApiAuthResetPasswordPost**](BodyResetResetPasswordApiAuthResetPasswordPost.md)|  | 
 
 ### Return type
 

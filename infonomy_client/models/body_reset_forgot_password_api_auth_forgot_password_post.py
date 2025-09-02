@@ -17,18 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
-from infonomy_client.models.detail import Detail
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ErrorModel(BaseModel):
+class BodyResetForgotPasswordApiAuthForgotPasswordPost(BaseModel):
     """
-    ErrorModel
+    BodyResetForgotPasswordApiAuthForgotPasswordPost
     """ # noqa: E501
-    detail: Detail
-    __properties: ClassVar[List[str]] = ["detail"]
+    email: StrictStr
+    __properties: ClassVar[List[str]] = ["email"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +47,7 @@ class ErrorModel(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ErrorModel from a JSON string"""
+        """Create an instance of BodyResetForgotPasswordApiAuthForgotPasswordPost from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,14 +68,11 @@ class ErrorModel(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of detail
-        if self.detail:
-            _dict['detail'] = self.detail.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ErrorModel from a dict"""
+        """Create an instance of BodyResetForgotPasswordApiAuthForgotPasswordPost from a dict"""
         if obj is None:
             return None
 
@@ -84,7 +80,7 @@ class ErrorModel(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "detail": Detail.from_dict(obj["detail"]) if obj.get("detail") is not None else None
+            "email": obj.get("email")
         })
         return _obj
 

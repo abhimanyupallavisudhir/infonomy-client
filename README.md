@@ -76,11 +76,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Auth:Jwt.Login
-        api_response = api_instance.auth_jwt_login_auth_jwt_login_post(username, password, grant_type=grant_type, scope=scope, client_id=client_id, client_secret=client_secret)
-        print("The response of AuthApi->auth_jwt_login_auth_jwt_login_post:\n")
+        api_response = api_instance.auth_jwt_login_api_auth_jwt_login_post(username, password, grant_type=grant_type, scope=scope, client_id=client_id, client_secret=client_secret)
+        print("The response of AuthApi->auth_jwt_login_api_auth_jwt_login_post:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AuthApi->auth_jwt_login_auth_jwt_login_post: %s\n" % e)
+        print("Exception when calling AuthApi->auth_jwt_login_api_auth_jwt_login_post: %s\n" % e)
 
 ```
 
@@ -90,64 +90,81 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthApi* | [**auth_jwt_login_auth_jwt_login_post**](docs/AuthApi.md#auth_jwt_login_auth_jwt_login_post) | **POST** /auth/jwt/login | Auth:Jwt.Login
-*AuthApi* | [**auth_jwt_logout_auth_jwt_logout_post**](docs/AuthApi.md#auth_jwt_logout_auth_jwt_logout_post) | **POST** /auth/jwt/logout | Auth:Jwt.Logout
-*AuthApi* | [**register_register_auth_register_post**](docs/AuthApi.md#register_register_auth_register_post) | **POST** /auth/register | Register:Register
-*AuthApi* | [**reset_forgot_password_auth_forgot_password_post**](docs/AuthApi.md#reset_forgot_password_auth_forgot_password_post) | **POST** /auth/forgot-password | Reset:Forgot Password
-*AuthApi* | [**reset_reset_password_auth_reset_password_post**](docs/AuthApi.md#reset_reset_password_auth_reset_password_post) | **POST** /auth/reset-password | Reset:Reset Password
+*AuthApi* | [**auth_jwt_login_api_auth_jwt_login_post**](docs/AuthApi.md#auth_jwt_login_api_auth_jwt_login_post) | **POST** /api/auth/jwt/login | Auth:Jwt.Login
+*AuthApi* | [**auth_jwt_logout_api_auth_jwt_logout_post**](docs/AuthApi.md#auth_jwt_logout_api_auth_jwt_logout_post) | **POST** /api/auth/jwt/logout | Auth:Jwt.Logout
+*AuthApi* | [**register_register_api_auth_register_post**](docs/AuthApi.md#register_register_api_auth_register_post) | **POST** /api/auth/register | Register:Register
+*AuthApi* | [**reset_forgot_password_api_auth_forgot_password_post**](docs/AuthApi.md#reset_forgot_password_api_auth_forgot_password_post) | **POST** /api/auth/forgot-password | Reset:Forgot Password
+*AuthApi* | [**reset_reset_password_api_auth_reset_password_post**](docs/AuthApi.md#reset_reset_password_api_auth_reset_password_post) | **POST** /api/auth/reset-password | Reset:Reset Password
 *AuthApi* | [**verify_request_token_auth_request_verify_token_post**](docs/AuthApi.md#verify_request_token_auth_request_verify_token_post) | **POST** /auth/request-verify-token | Verify:Request-Token
 *AuthApi* | [**verify_verify_auth_verify_post**](docs/AuthApi.md#verify_verify_auth_verify_post) | **POST** /auth/verify | Verify:Verify
-*BotSellersApi* | [**create_bot_seller_bot_sellers_post**](docs/BotSellersApi.md#create_bot_seller_bot_sellers_post) | **POST** /bot-sellers/ | Create Bot Seller
-*BotSellersApi* | [**create_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_post**](docs/BotSellersApi.md#create_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_post) | **POST** /bot-sellers/{bot_seller_id}/matchers | Create Bot Seller Matcher
-*BotSellersApi* | [**delete_bot_seller_bot_sellers_bot_seller_id_delete**](docs/BotSellersApi.md#delete_bot_seller_bot_sellers_bot_seller_id_delete) | **DELETE** /bot-sellers/{bot_seller_id} | Delete Bot Seller
-*BotSellersApi* | [**delete_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_delete**](docs/BotSellersApi.md#delete_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_delete) | **DELETE** /bot-sellers/{bot_seller_id}/matchers/{matcher_id} | Delete Bot Seller Matcher
-*BotSellersApi* | [**get_bot_seller_bot_sellers_bot_seller_id_get**](docs/BotSellersApi.md#get_bot_seller_bot_sellers_bot_seller_id_get) | **GET** /bot-sellers/{bot_seller_id} | Get Bot Seller
-*BotSellersApi* | [**list_bot_seller_matchers_bot_sellers_bot_seller_id_matchers_get**](docs/BotSellersApi.md#list_bot_seller_matchers_bot_sellers_bot_seller_id_matchers_get) | **GET** /bot-sellers/{bot_seller_id}/matchers | List Bot Seller Matchers
-*BotSellersApi* | [**list_bot_sellers_bot_sellers_get**](docs/BotSellersApi.md#list_bot_sellers_bot_sellers_get) | **GET** /bot-sellers/ | List Bot Sellers
-*BotSellersApi* | [**update_bot_seller_bot_sellers_bot_seller_id_put**](docs/BotSellersApi.md#update_bot_seller_bot_sellers_bot_seller_id_put) | **PUT** /bot-sellers/{bot_seller_id} | Update Bot Seller
-*BotSellersApi* | [**update_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_put**](docs/BotSellersApi.md#update_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_put) | **PUT** /bot-sellers/{bot_seller_id}/matchers/{matcher_id} | Update Bot Seller Matcher
-*DecisionContextsApi* | [**create_decision_context_questions_post**](docs/DecisionContextsApi.md#create_decision_context_questions_post) | **POST** /questions | Create Decision Context
-*DecisionContextsApi* | [**create_info_offer_questions_context_id_answers_post**](docs/DecisionContextsApi.md#create_info_offer_questions_context_id_answers_post) | **POST** /questions/{context_id}/answers | Create Info Offer
-*DecisionContextsApi* | [**delete_decision_context_questions_context_id_delete**](docs/DecisionContextsApi.md#delete_decision_context_questions_context_id_delete) | **DELETE** /questions/{context_id} | Delete Decision Context
-*DecisionContextsApi* | [**delete_info_offer_questions_context_id_answers_info_offer_id_delete**](docs/DecisionContextsApi.md#delete_info_offer_questions_context_id_answers_info_offer_id_delete) | **DELETE** /questions/{context_id}/answers/{info_offer_id} | Delete Info Offer
-*DecisionContextsApi* | [**list_current_user_decision_contexts_users_me_questions_get**](docs/DecisionContextsApi.md#list_current_user_decision_contexts_users_me_questions_get) | **GET** /users/me/questions | List Current User Decision Contexts
-*DecisionContextsApi* | [**list_current_user_info_offers_users_me_answers_get**](docs/DecisionContextsApi.md#list_current_user_info_offers_users_me_answers_get) | **GET** /users/me/answers | List Current User Info Offers
-*DecisionContextsApi* | [**list_decision_contexts_questions_get**](docs/DecisionContextsApi.md#list_decision_contexts_questions_get) | **GET** /questions | List Decision Contexts
-*DecisionContextsApi* | [**list_user_decision_contexts_users_user_id_questions_get**](docs/DecisionContextsApi.md#list_user_decision_contexts_users_user_id_questions_get) | **GET** /users/{user_id}/questions | List User Decision Contexts
-*DecisionContextsApi* | [**list_user_info_offers_users_user_id_answers_get**](docs/DecisionContextsApi.md#list_user_info_offers_users_user_id_answers_get) | **GET** /users/{user_id}/answers | List User Info Offers
-*DecisionContextsApi* | [**read_decision_context_questions_context_id_get**](docs/DecisionContextsApi.md#read_decision_context_questions_context_id_get) | **GET** /questions/{context_id} | Read Decision Context
-*DecisionContextsApi* | [**read_info_offer_questions_context_id_answers_info_offer_id_get**](docs/DecisionContextsApi.md#read_info_offer_questions_context_id_answers_info_offer_id_get) | **GET** /questions/{context_id}/answers/{info_offer_id} | Read Info Offer
-*DecisionContextsApi* | [**read_info_offers_for_decision_context_questions_context_id_answers_get**](docs/DecisionContextsApi.md#read_info_offers_for_decision_context_questions_context_id_answers_get) | **GET** /questions/{context_id}/answers | Read Info Offers For Decision Context
-*DecisionContextsApi* | [**read_info_offers_private_for_decision_context_questions_context_id_answers_private_get**](docs/DecisionContextsApi.md#read_info_offers_private_for_decision_context_questions_context_id_answers_private_get) | **GET** /questions/{context_id}/answers_private | Read Info Offers Private For Decision Context
-*DecisionContextsApi* | [**read_info_offers_public_for_decision_context_questions_context_id_answers_public_get**](docs/DecisionContextsApi.md#read_info_offers_public_for_decision_context_questions_context_id_answers_public_get) | **GET** /questions/{context_id}/answers_public | Read Info Offers Public For Decision Context
-*DecisionContextsApi* | [**update_decision_context_questions_context_id_patch**](docs/DecisionContextsApi.md#update_decision_context_questions_context_id_patch) | **PATCH** /questions/{context_id} | Update Decision Context
-*DecisionContextsApi* | [**update_info_offer_questions_context_id_answers_info_offer_id_patch**](docs/DecisionContextsApi.md#update_info_offer_questions_context_id_answers_info_offer_id_patch) | **PATCH** /questions/{context_id}/answers/{info_offer_id} | Update Info Offer
-*DefaultApi* | [**root_get**](docs/DefaultApi.md#root_get) | **GET** / | Root
-*InboxApi* | [**read_decision_contexts_for_matcher_matchers_matcher_id_inbox_get**](docs/InboxApi.md#read_decision_contexts_for_matcher_matchers_matcher_id_inbox_get) | **GET** /matchers/{matcher_id}/inbox | Read Decision Contexts For Matcher
-*InboxApi* | [**read_decision_contexts_for_seller_sellers_seller_id_inbox_get**](docs/InboxApi.md#read_decision_contexts_for_seller_sellers_seller_id_inbox_get) | **GET** /sellers/{seller_id}/inbox | Read Decision Contexts For Seller
-*InspectionApi* | [**get_job_status_jobs_job_id_status_get**](docs/InspectionApi.md#get_job_status_jobs_job_id_status_get) | **GET** /jobs/{job_id}/status | Get Job Status
-*InspectionApi* | [**inspect_context_questions_context_id_inspect_post**](docs/InspectionApi.md#inspect_context_questions_context_id_inspect_post) | **POST** /questions/{context_id}/inspect | Inspect Context
-*ProfilesApi* | [**create_human_buyer_buyers_post**](docs/ProfilesApi.md#create_human_buyer_buyers_post) | **POST** /buyers | Create Human Buyer
-*ProfilesApi* | [**create_human_seller_matcher_sellers_me_matchers_post**](docs/ProfilesApi.md#create_human_seller_matcher_sellers_me_matchers_post) | **POST** /sellers/me/matchers | Create Human Seller Matcher
-*ProfilesApi* | [**create_human_seller_sellers_post**](docs/ProfilesApi.md#create_human_seller_sellers_post) | **POST** /sellers | Create Human Seller
-*ProfilesApi* | [**delete_human_seller_matcher_sellers_me_matchers_matcher_id_delete**](docs/ProfilesApi.md#delete_human_seller_matcher_sellers_me_matchers_matcher_id_delete) | **DELETE** /sellers/me/matchers/{matcher_id} | Delete Human Seller Matcher
-*ProfilesApi* | [**get_buyer_stats_by_id_buyers_user_id_stats_get**](docs/ProfilesApi.md#get_buyer_stats_by_id_buyers_user_id_stats_get) | **GET** /buyers/{user_id}/stats | Get Buyer Stats By Id
-*ProfilesApi* | [**get_current_buyer_stats_buyers_me_stats_get**](docs/ProfilesApi.md#get_current_buyer_stats_buyers_me_stats_get) | **GET** /buyers/me/stats | Get Current Buyer Stats
-*ProfilesApi* | [**list_human_seller_matchers_sellers_me_matchers_get**](docs/ProfilesApi.md#list_human_seller_matchers_sellers_me_matchers_get) | **GET** /sellers/me/matchers | List Human Seller Matchers
-*ProfilesApi* | [**read_current_human_buyer_buyers_me_get**](docs/ProfilesApi.md#read_current_human_buyer_buyers_me_get) | **GET** /buyers/me | Read Current Human Buyer
-*ProfilesApi* | [**read_current_human_seller_sellers_me_get**](docs/ProfilesApi.md#read_current_human_seller_sellers_me_get) | **GET** /sellers/me | Read Current Human Seller
-*ProfilesApi* | [**update_current_human_buyer_buyers_me_put**](docs/ProfilesApi.md#update_current_human_buyer_buyers_me_put) | **PUT** /buyers/me | Update Current Human Buyer
-*ProfilesApi* | [**update_human_seller_matcher_sellers_me_matchers_matcher_id_put**](docs/ProfilesApi.md#update_human_seller_matcher_sellers_me_matchers_matcher_id_put) | **PUT** /sellers/me/matchers/{matcher_id} | Update Human Seller Matcher
+*BotSellersApi* | [**create_bot_seller_api_bot_sellers_post**](docs/BotSellersApi.md#create_bot_seller_api_bot_sellers_post) | **POST** /api/bot-sellers/ | Create Bot Seller
+*BotSellersApi* | [**create_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_post**](docs/BotSellersApi.md#create_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_post) | **POST** /api/bot-sellers/{bot_seller_id}/matchers | Create Bot Seller Matcher
+*BotSellersApi* | [**delete_bot_seller_api_bot_sellers_bot_seller_id_delete**](docs/BotSellersApi.md#delete_bot_seller_api_bot_sellers_bot_seller_id_delete) | **DELETE** /api/bot-sellers/{bot_seller_id} | Delete Bot Seller
+*BotSellersApi* | [**delete_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_delete**](docs/BotSellersApi.md#delete_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_delete) | **DELETE** /api/bot-sellers/{bot_seller_id}/matchers/{matcher_id} | Delete Bot Seller Matcher
+*BotSellersApi* | [**get_bot_seller_api_bot_sellers_bot_seller_id_get**](docs/BotSellersApi.md#get_bot_seller_api_bot_sellers_bot_seller_id_get) | **GET** /api/bot-sellers/{bot_seller_id} | Get Bot Seller
+*BotSellersApi* | [**list_bot_seller_matchers_api_bot_sellers_bot_seller_id_matchers_get**](docs/BotSellersApi.md#list_bot_seller_matchers_api_bot_sellers_bot_seller_id_matchers_get) | **GET** /api/bot-sellers/{bot_seller_id}/matchers | List Bot Seller Matchers
+*BotSellersApi* | [**list_bot_sellers_api_bot_sellers_get**](docs/BotSellersApi.md#list_bot_sellers_api_bot_sellers_get) | **GET** /api/bot-sellers/ | List Bot Sellers
+*BotSellersApi* | [**update_bot_seller_api_bot_sellers_bot_seller_id_put**](docs/BotSellersApi.md#update_bot_seller_api_bot_sellers_bot_seller_id_put) | **PUT** /api/bot-sellers/{bot_seller_id} | Update Bot Seller
+*BotSellersApi* | [**update_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_put**](docs/BotSellersApi.md#update_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_put) | **PUT** /api/bot-sellers/{bot_seller_id}/matchers/{matcher_id} | Update Bot Seller Matcher
+*DecisionContextsApi* | [**create_decision_context_api_questions_post**](docs/DecisionContextsApi.md#create_decision_context_api_questions_post) | **POST** /api/questions | Create Decision Context
+*DecisionContextsApi* | [**create_info_offer_api_questions_context_id_answers_post**](docs/DecisionContextsApi.md#create_info_offer_api_questions_context_id_answers_post) | **POST** /api/questions/{context_id}/answers | Create Info Offer
+*DecisionContextsApi* | [**delete_decision_context_api_questions_context_id_delete**](docs/DecisionContextsApi.md#delete_decision_context_api_questions_context_id_delete) | **DELETE** /api/questions/{context_id} | Delete Decision Context
+*DecisionContextsApi* | [**delete_info_offer_api_questions_context_id_answers_info_offer_id_delete**](docs/DecisionContextsApi.md#delete_info_offer_api_questions_context_id_answers_info_offer_id_delete) | **DELETE** /api/questions/{context_id}/answers/{info_offer_id} | Delete Info Offer
+*DecisionContextsApi* | [**list_current_user_decision_contexts_api_users_me_questions_get**](docs/DecisionContextsApi.md#list_current_user_decision_contexts_api_users_me_questions_get) | **GET** /api/users/me/questions | List Current User Decision Contexts
+*DecisionContextsApi* | [**list_current_user_info_offers_api_users_me_answers_get**](docs/DecisionContextsApi.md#list_current_user_info_offers_api_users_me_answers_get) | **GET** /api/users/me/answers | List Current User Info Offers
+*DecisionContextsApi* | [**list_decision_contexts_api_questions_get**](docs/DecisionContextsApi.md#list_decision_contexts_api_questions_get) | **GET** /api/questions | List Decision Contexts
+*DecisionContextsApi* | [**list_user_decision_contexts_api_users_user_id_questions_get**](docs/DecisionContextsApi.md#list_user_decision_contexts_api_users_user_id_questions_get) | **GET** /api/users/{user_id}/questions | List User Decision Contexts
+*DecisionContextsApi* | [**list_user_info_offers_api_users_user_id_answers_get**](docs/DecisionContextsApi.md#list_user_info_offers_api_users_user_id_answers_get) | **GET** /api/users/{user_id}/answers | List User Info Offers
+*DecisionContextsApi* | [**read_decision_context_api_questions_context_id_get**](docs/DecisionContextsApi.md#read_decision_context_api_questions_context_id_get) | **GET** /api/questions/{context_id} | Read Decision Context
+*DecisionContextsApi* | [**read_info_offer_api_questions_context_id_answers_info_offer_id_get**](docs/DecisionContextsApi.md#read_info_offer_api_questions_context_id_answers_info_offer_id_get) | **GET** /api/questions/{context_id}/answers/{info_offer_id} | Read Info Offer
+*DecisionContextsApi* | [**read_info_offers_for_decision_context_api_questions_context_id_answers_get**](docs/DecisionContextsApi.md#read_info_offers_for_decision_context_api_questions_context_id_answers_get) | **GET** /api/questions/{context_id}/answers | Read Info Offers For Decision Context
+*DecisionContextsApi* | [**read_info_offers_private_for_decision_context_api_questions_context_id_answers_private_get**](docs/DecisionContextsApi.md#read_info_offers_private_for_decision_context_api_questions_context_id_answers_private_get) | **GET** /api/questions/{context_id}/answers_private | Read Info Offers Private For Decision Context
+*DecisionContextsApi* | [**read_info_offers_public_for_decision_context_api_questions_context_id_answers_public_get**](docs/DecisionContextsApi.md#read_info_offers_public_for_decision_context_api_questions_context_id_answers_public_get) | **GET** /api/questions/{context_id}/answers_public | Read Info Offers Public For Decision Context
+*DecisionContextsApi* | [**update_decision_context_api_questions_context_id_patch**](docs/DecisionContextsApi.md#update_decision_context_api_questions_context_id_patch) | **PATCH** /api/questions/{context_id} | Update Decision Context
+*DecisionContextsApi* | [**update_info_offer_api_questions_context_id_answers_info_offer_id_patch**](docs/DecisionContextsApi.md#update_info_offer_api_questions_context_id_answers_info_offer_id_patch) | **PATCH** /api/questions/{context_id}/answers/{info_offer_id} | Update Info Offer
+*InboxApi* | [**read_decision_contexts_for_matcher_api_matchers_matcher_id_inbox_get**](docs/InboxApi.md#read_decision_contexts_for_matcher_api_matchers_matcher_id_inbox_get) | **GET** /api/matchers/{matcher_id}/inbox | Read Decision Contexts For Matcher
+*InboxApi* | [**read_decision_contexts_for_seller_api_sellers_seller_id_inbox_get**](docs/InboxApi.md#read_decision_contexts_for_seller_api_sellers_seller_id_inbox_get) | **GET** /api/sellers/{seller_id}/inbox | Read Decision Contexts For Seller
+*InboxApi* | [**update_inbox_status_api_inbox_inbox_id_status_post**](docs/InboxApi.md#update_inbox_status_api_inbox_inbox_id_status_post) | **POST** /api/inbox/{inbox_id}/status | Update Inbox Status
+*InspectionApi* | [**get_job_status_api_jobs_job_id_status_get**](docs/InspectionApi.md#get_job_status_api_jobs_job_id_status_get) | **GET** /api/jobs/{job_id}/status | Get Job Status
+*InspectionApi* | [**inspect_context_api_questions_context_id_inspect_post**](docs/InspectionApi.md#inspect_context_api_questions_context_id_inspect_post) | **POST** /api/questions/{context_id}/inspect | Inspect Context
+*ProfilesApi* | [**create_human_buyer_api_buyers_post**](docs/ProfilesApi.md#create_human_buyer_api_buyers_post) | **POST** /api/buyers | Create Human Buyer
+*ProfilesApi* | [**create_human_seller_api_sellers_post**](docs/ProfilesApi.md#create_human_seller_api_sellers_post) | **POST** /api/sellers | Create Human Seller
+*ProfilesApi* | [**create_human_seller_matcher_api_sellers_me_matchers_post**](docs/ProfilesApi.md#create_human_seller_matcher_api_sellers_me_matchers_post) | **POST** /api/sellers/me/matchers | Create Human Seller Matcher
+*ProfilesApi* | [**delete_human_seller_matcher_api_sellers_me_matchers_matcher_id_delete**](docs/ProfilesApi.md#delete_human_seller_matcher_api_sellers_me_matchers_matcher_id_delete) | **DELETE** /api/sellers/me/matchers/{matcher_id} | Delete Human Seller Matcher
+*ProfilesApi* | [**get_buyer_stats_by_id_api_buyers_user_id_stats_get**](docs/ProfilesApi.md#get_buyer_stats_by_id_api_buyers_user_id_stats_get) | **GET** /api/buyers/{user_id}/stats | Get Buyer Stats By Id
+*ProfilesApi* | [**get_current_buyer_stats_api_buyers_me_stats_get**](docs/ProfilesApi.md#get_current_buyer_stats_api_buyers_me_stats_get) | **GET** /api/buyers/me/stats | Get Current Buyer Stats
+*ProfilesApi* | [**list_human_seller_matchers_api_sellers_me_matchers_get**](docs/ProfilesApi.md#list_human_seller_matchers_api_sellers_me_matchers_get) | **GET** /api/sellers/me/matchers | List Human Seller Matchers
+*ProfilesApi* | [**read_current_human_buyer_api_buyers_me_get**](docs/ProfilesApi.md#read_current_human_buyer_api_buyers_me_get) | **GET** /api/buyers/me | Read Current Human Buyer
+*ProfilesApi* | [**read_current_human_seller_api_sellers_me_get**](docs/ProfilesApi.md#read_current_human_seller_api_sellers_me_get) | **GET** /api/sellers/me | Read Current Human Seller
+*ProfilesApi* | [**update_current_human_buyer_api_buyers_me_put**](docs/ProfilesApi.md#update_current_human_buyer_api_buyers_me_put) | **PUT** /api/buyers/me | Update Current Human Buyer
+*ProfilesApi* | [**update_human_seller_matcher_api_sellers_me_matchers_matcher_id_put**](docs/ProfilesApi.md#update_human_seller_matcher_api_sellers_me_matchers_matcher_id_put) | **PUT** /api/sellers/me/matchers/{matcher_id} | Update Human Seller Matcher
+*UiApi* | [**create_answer_questions_question_id_answers_post**](docs/UiApi.md#create_answer_questions_question_id_answers_post) | **POST** /questions/{question_id}/answers | Create Answer
+*UiApi* | [**create_bot_matcher_profile_bot_matcher_post**](docs/UiApi.md#create_bot_matcher_profile_bot_matcher_post) | **POST** /profile/bot-matcher | Create Bot Matcher
+*UiApi* | [**create_bot_seller_profile_bot_seller_post**](docs/UiApi.md#create_bot_seller_profile_bot_seller_post) | **POST** /profile/bot-seller | Create Bot Seller
+*UiApi* | [**create_buyer_profile_profile_buyer_post**](docs/UiApi.md#create_buyer_profile_profile_buyer_post) | **POST** /profile/buyer | Create Buyer Profile
+*UiApi* | [**create_matcher_profile_matcher_post**](docs/UiApi.md#create_matcher_profile_matcher_post) | **POST** /profile/matcher | Create Matcher
+*UiApi* | [**create_question_questions_post**](docs/UiApi.md#create_question_questions_post) | **POST** /questions | Create Question
+*UiApi* | [**create_seller_profile_profile_seller_post**](docs/UiApi.md#create_seller_profile_profile_seller_post) | **POST** /profile/seller | Create Seller Profile
+*UiApi* | [**debug_auth_debug_auth_get**](docs/UiApi.md#debug_auth_debug_auth_get) | **GET** /debug/auth | Debug Auth
+*UiApi* | [**home_page_get**](docs/UiApi.md#home_page_get) | **GET** / | Home Page
+*UiApi* | [**inspect_answer_inspect_question_id_answer_id_post**](docs/UiApi.md#inspect_answer_inspect_question_id_answer_id_post) | **POST** /inspect/{question_id}/{answer_id} | Inspect Answer
+*UiApi* | [**profile_setup_page_profile_get**](docs/UiApi.md#profile_setup_page_profile_get) | **GET** /profile | Profile Setup Page
+*UiApi* | [**question_detail_page_questions_question_id_get**](docs/UiApi.md#question_detail_page_questions_question_id_get) | **GET** /questions/{question_id} | Question Detail Page
+*UiApi* | [**questions_page_questions_get**](docs/UiApi.md#questions_page_questions_get) | **GET** /questions | Questions Page
+*UiApi* | [**register_page_register_get**](docs/UiApi.md#register_page_register_get) | **GET** /register | Register Page
+*UiApi* | [**user_profile_page_users_user_id_get**](docs/UiApi.md#user_profile_page_users_user_id_get) | **GET** /users/{user_id} | User Profile Page
+*UiApi* | [**users_page_users_get**](docs/UiApi.md#users_page_users_get) | **GET** /users | Users Page
 *UsersApi* | [**claim_daily_bonus_users_me_daily_bonus_post**](docs/UsersApi.md#claim_daily_bonus_users_me_daily_bonus_post) | **POST** /users/me/daily-bonus | Claim Daily Bonus
 *UsersApi* | [**get_api_keys_users_me_api_keys_get**](docs/UsersApi.md#get_api_keys_users_me_api_keys_get) | **GET** /users/me/api-keys | Get Api Keys
+*UsersApi* | [**get_current_user_api_users_me_get**](docs/UsersApi.md#get_current_user_api_users_me_get) | **GET** /api/users/me | Get Current User
 *UsersApi* | [**get_current_user_purchases_users_me_purchases_get**](docs/UsersApi.md#get_current_user_purchases_users_me_purchases_get) | **GET** /users/me/purchases | Get Current User Purchases
 *UsersApi* | [**get_current_user_sales_users_me_sales_get**](docs/UsersApi.md#get_current_user_sales_users_me_sales_get) | **GET** /users/me/sales | Get Current User Sales
 *UsersApi* | [**get_daily_bonus_status_users_me_daily_bonus_get**](docs/UsersApi.md#get_daily_bonus_status_users_me_daily_bonus_get) | **GET** /users/me/daily-bonus | Get Daily Bonus Status
 *UsersApi* | [**get_transactions_transactions_get**](docs/UsersApi.md#get_transactions_transactions_get) | **GET** /transactions | Get Transactions
-*UsersApi* | [**get_user_users_user_id_get**](docs/UsersApi.md#get_user_users_user_id_get) | **GET** /users/{user_id} | Get User
-*UsersApi* | [**get_users_users_get**](docs/UsersApi.md#get_users_users_get) | **GET** /users/ | Get Users
+*UsersApi* | [**get_user_api_users_user_id_get**](docs/UsersApi.md#get_user_api_users_user_id_get) | **GET** /api/users/{user_id} | Get User
+*UsersApi* | [**get_users_api_users_get**](docs/UsersApi.md#get_users_api_users_get) | **GET** /api/users/ | Get Users
 *UsersApi* | [**update_api_keys_users_me_api_keys_put**](docs/UsersApi.md#update_api_keys_users_me_api_keys_put) | **PUT** /users/me/api-keys | Update Api Keys
-*UsersApi* | [**update_current_user_users_me_put**](docs/UsersApi.md#update_current_user_users_me_put) | **PUT** /users/me | Update Current User
+*UsersApi* | [**update_current_user_api_users_me_put**](docs/UsersApi.md#update_current_user_api_users_me_put) | **PUT** /api/users/me | Update Current User
 *UsersApi* | [**users_current_user_users_me_get**](docs/UsersApi.md#users_current_user_users_me_get) | **GET** /users/me | Users:Current User
 *UsersApi* | [**users_delete_user_users_id_delete**](docs/UsersApi.md#users_delete_user_users_id_delete) | **DELETE** /users/{id} | Users:Delete User
 *UsersApi* | [**users_patch_current_user_users_me_patch**](docs/UsersApi.md#users_patch_current_user_users_me_patch) | **PATCH** /users/me | Users:Patch Current User
@@ -158,8 +175,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [BearerResponse](docs/BearerResponse.md)
- - [BodyResetForgotPasswordAuthForgotPasswordPost](docs/BodyResetForgotPasswordAuthForgotPasswordPost.md)
- - [BodyResetResetPasswordAuthResetPasswordPost](docs/BodyResetResetPasswordAuthResetPasswordPost.md)
+ - [BodyResetForgotPasswordApiAuthForgotPasswordPost](docs/BodyResetForgotPasswordApiAuthForgotPasswordPost.md)
+ - [BodyResetResetPasswordApiAuthResetPasswordPost](docs/BodyResetResetPasswordApiAuthResetPasswordPost.md)
  - [BodyVerifyRequestTokenAuthRequestVerifyTokenPost](docs/BodyVerifyRequestTokenAuthRequestVerifyTokenPost.md)
  - [BodyVerifyVerifyAuthVerifyPost](docs/BodyVerifyVerifyAuthVerifyPost.md)
  - [BotSellerCreate](docs/BotSellerCreate.md)
@@ -181,8 +198,8 @@ Class | Method | HTTP request | Description
  - [InfoOfferReadPublic](docs/InfoOfferReadPublic.md)
  - [InfoOfferUpdate](docs/InfoOfferUpdate.md)
  - [LLMBuyerType](docs/LLMBuyerType.md)
- - [ReadInfoOffersForDecisionContextQuestionsContextIdAnswersGet200ResponseInner](docs/ReadInfoOffersForDecisionContextQuestionsContextIdAnswersGet200ResponseInner.md)
- - [ResponseReadInfoOfferQuestionsContextIdAnswersInfoOfferIdGet](docs/ResponseReadInfoOfferQuestionsContextIdAnswersInfoOfferIdGet.md)
+ - [ReadInfoOffersForDecisionContextApiQuestionsContextIdAnswersGet200ResponseInner](docs/ReadInfoOffersForDecisionContextApiQuestionsContextIdAnswersGet200ResponseInner.md)
+ - [ResponseReadInfoOfferApiQuestionsContextIdAnswersInfoOfferIdGet](docs/ResponseReadInfoOfferApiQuestionsContextIdAnswersInfoOfferIdGet.md)
  - [SellerMatcherCreate](docs/SellerMatcherCreate.md)
  - [SellerMatcherRead](docs/SellerMatcherRead.md)
  - [SellerMatcherUpdate](docs/SellerMatcherUpdate.md)

@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **default_child_llm** | [**LLMBuyerType**](LLMBuyerType.md) |  | [optional] 
-**default_max_budget** | **float** |  | [optional] 
 
 ## Example
 

@@ -4,7 +4,6 @@ from infonomy_client.api import (
     AuthApi,
     BotSellersApi, 
     DecisionContextsApi,
-    DefaultApi,
     InboxApi,
     InspectionApi,
     ProfilesApi,
@@ -35,12 +34,12 @@ class InfonomyClient:
         self._users_api = None
     
     def register(self):
-        response = requests.post(f"{self.base_url}/auth/register", json={"username": self.username, "email": self.email, "password": self.password})
+        response = requests.post(f"{self.base_url}/api/auth/register", json={"username": self.username, "email": self.email, "password": self.password})
         print(f"Registration of {self.username}: {response.status_code}")
         return response.status_code
 
     def login(self):
-        response = requests.post(f"{self.base_url}/auth/jwt/login", data={"username": self.email, "password": self.password})
+        response = requests.post(f"{self.base_url}/api/auth/jwt/login", data={"username": self.email, "password": self.password})
         self.access_token = response.json()["access_token"]
         self._refresh_apis()
         print(f"Login of {self.email}: {response.status_code}")
@@ -51,16 +50,78 @@ class InfonomyClient:
         self.access_token = None
         self._refresh_apis()
     
-    def _create_api_client(self):
-        """Create ApiClient with current configuration"""
-        if self.access_token:
-            # Method 2: Set access token on configuration
-            self.config.access_token = self.access_token
-            # Alternative: Set it in default headers
-            # self.config.api_key['Authorization'] = f'Bearer {self.access_token}'
+    # def _create_api_client(self):
+    #     """Create ApiClient with current configuration"""
+    #     if self.access_token:
+    #         # Method 2: Set access token on configuration
+    #         self.config.access_token = self.access_token
+    #         # Alternative: Set it in default headers
+    #         # self.config.api_key['Authorization'] = f'Bearer {self.access_token}'
         
-        return ApiClient(self.config)
-    
+    #     return ApiClient(self.config)
+
+    def _create_api_client(self):
+        client = ApiClient(self.config)
+        
+        if self.access_token:
+            # Set the header directly on the client using set_default_header
+            client.set_default_header('Authorization', f'Bearer {self.access_token}')
+            print(f"Set Authorization header directly on client: Bearer {self.access_token}...")
+        
+        return client
+
+    # def _create_api_client(self):
+    #     if self.access_token:
+    #         if not hasattr(self.config, 'api_key'):
+    #             self.config.api_key = {}
+    #         self.config.api_key['Authorization'] = f'Bearer {self.access_token}'
+            
+    #         # Debug: print the actual configuration
+    #         print(f"Base URL: {self.config.host}")
+    #         print(f"API Keys: {getattr(self.config, 'api_key', {})}")
+    #         print(f"Access Token: {self.access_token[:20]}..." if self.access_token else "None")
+        
+    #     # Create the client and add a debug interceptor
+    #     client = ApiClient(self.config)
+        
+    #     # Debug: let's see what URLs are actually being called
+    #     original_call_api = client.call_api
+    #     def debug_call_api(*args, **kwargs):
+    #         print(f"OpenAPI client calling: {args}")
+    #         print(f"With kwargs: {kwargs}")
+    #         # Also print the actual headers being sent
+    #         if 'headers' in kwargs:
+    #             print(f"Headers being sent: {kwargs['headers']}")
+    #         return original_call_api(*args, **kwargs)
+        
+    #     client.call_api = debug_call_api
+        
+    #     return client
+
+    # def _create_api_client(self):
+    #     if self.access_token:
+    #         if not hasattr(self.config, 'api_key'):
+    #             self.config.api_key = {}
+    #         self.config.api_key['Authorization'] = f'Bearer {self.access_token}'
+        
+    #     # Debug: print the actual configuration
+    #     print(f"Base URL: {self.config.host}")
+    #     print(f"API Keys: {getattr(self.config, 'api_key', {})}")
+        
+    #     # Create the client and add a debug interceptor
+    #     client = ApiClient(self.config)
+        
+    #     # Debug: let's see what URLs are actually being called
+    #     original_call_api = client.call_api
+    #     def debug_call_api(*args, **kwargs):
+    #         print(f"OpenAPI client calling: {args}")
+    #         print(f"With kwargs: {kwargs}")
+    #         return original_call_api(*args, **kwargs)
+        
+    #     client.call_api = debug_call_api
+        
+    #     return client
+
     def _refresh_apis(self):
         """Refresh all API instances with new authentication"""
         # Create new API client with updated config
@@ -139,16 +200,7 @@ class InfonomyClient:
                 self.api_client = self._create_api_client()
             self._users_api = UsersApi(self.api_client)
         return self._users_api
-    
-    @property
-    def default(self) -> DefaultApi:
-        """Access to default API"""
-        if self._default_api is None:
-            if self.api_client is None:
-                self.api_client = self._create_api_client()
-            self._default_api = DefaultApi(self.api_client)
-        return self._default_api
-    
+        
     # Context manager support
     def __enter__(self):
         return self

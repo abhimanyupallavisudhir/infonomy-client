@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **model** | **str** |  | [optional] [default to 'openrouter/openai/chatgpt-4o-latest']
 **custom_prompt** | **str** |  | [optional] 
-**max_budget** | **float** |  | [optional] [default to 50.0]
 
 ## Example
 

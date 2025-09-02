@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_job_status_jobs_job_id_status_get**](InspectionApi.md#get_job_status_jobs_job_id_status_get) | **GET** /jobs/{job_id}/status | Get Job Status
-[**inspect_context_questions_context_id_inspect_post**](InspectionApi.md#inspect_context_questions_context_id_inspect_post) | **POST** /questions/{context_id}/inspect | Inspect Context
+[**get_job_status_api_jobs_job_id_status_get**](InspectionApi.md#get_job_status_api_jobs_job_id_status_get) | **GET** /api/jobs/{job_id}/status | Get Job Status
+[**inspect_context_api_questions_context_id_inspect_post**](InspectionApi.md#inspect_context_api_questions_context_id_inspect_post) | **POST** /api/questions/{context_id}/inspect | Inspect Context
 
 
-# **get_job_status_jobs_job_id_status_get**
-> object get_job_status_jobs_job_id_status_get(job_id)
+# **get_job_status_api_jobs_job_id_status_get**
+> object get_job_status_api_jobs_job_id_status_get(job_id)
 
 Get Job Status
 
@@ -45,11 +45,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Job Status
-        api_response = api_instance.get_job_status_jobs_job_id_status_get(job_id)
-        print("The response of InspectionApi->get_job_status_jobs_job_id_status_get:\n")
+        api_response = api_instance.get_job_status_api_jobs_job_id_status_get(job_id)
+        print("The response of InspectionApi->get_job_status_api_jobs_job_id_status_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InspectionApi->get_job_status_jobs_job_id_status_get: %s\n" % e)
+        print("Exception when calling InspectionApi->get_job_status_api_jobs_job_id_status_get: %s\n" % e)
 ```
 
 
@@ -83,8 +83,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **inspect_context_questions_context_id_inspect_post**
-> object inspect_context_questions_context_id_inspect_post(context_id)
+# **inspect_context_api_questions_context_id_inspect_post**
+> object inspect_context_api_questions_context_id_inspect_post(context_id)
 
 Inspect Context
 
@@ -118,11 +118,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Inspect Context
-        api_response = api_instance.inspect_context_questions_context_id_inspect_post(context_id)
-        print("The response of InspectionApi->inspect_context_questions_context_id_inspect_post:\n")
+        api_response = api_instance.inspect_context_api_questions_context_id_inspect_post(context_id)
+        print("The response of InspectionApi->inspect_context_api_questions_context_id_inspect_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InspectionApi->inspect_context_questions_context_id_inspect_post: %s\n" % e)
+        print("Exception when calling InspectionApi->inspect_context_api_questions_context_id_inspect_post: %s\n" % e)
 ```
 
 

@@ -4,19 +4,19 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_bot_seller_bot_sellers_post**](BotSellersApi.md#create_bot_seller_bot_sellers_post) | **POST** /bot-sellers/ | Create Bot Seller
-[**create_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_post**](BotSellersApi.md#create_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_post) | **POST** /bot-sellers/{bot_seller_id}/matchers | Create Bot Seller Matcher
-[**delete_bot_seller_bot_sellers_bot_seller_id_delete**](BotSellersApi.md#delete_bot_seller_bot_sellers_bot_seller_id_delete) | **DELETE** /bot-sellers/{bot_seller_id} | Delete Bot Seller
-[**delete_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_delete**](BotSellersApi.md#delete_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_delete) | **DELETE** /bot-sellers/{bot_seller_id}/matchers/{matcher_id} | Delete Bot Seller Matcher
-[**get_bot_seller_bot_sellers_bot_seller_id_get**](BotSellersApi.md#get_bot_seller_bot_sellers_bot_seller_id_get) | **GET** /bot-sellers/{bot_seller_id} | Get Bot Seller
-[**list_bot_seller_matchers_bot_sellers_bot_seller_id_matchers_get**](BotSellersApi.md#list_bot_seller_matchers_bot_sellers_bot_seller_id_matchers_get) | **GET** /bot-sellers/{bot_seller_id}/matchers | List Bot Seller Matchers
-[**list_bot_sellers_bot_sellers_get**](BotSellersApi.md#list_bot_sellers_bot_sellers_get) | **GET** /bot-sellers/ | List Bot Sellers
-[**update_bot_seller_bot_sellers_bot_seller_id_put**](BotSellersApi.md#update_bot_seller_bot_sellers_bot_seller_id_put) | **PUT** /bot-sellers/{bot_seller_id} | Update Bot Seller
-[**update_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_put**](BotSellersApi.md#update_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_put) | **PUT** /bot-sellers/{bot_seller_id}/matchers/{matcher_id} | Update Bot Seller Matcher
+[**create_bot_seller_api_bot_sellers_post**](BotSellersApi.md#create_bot_seller_api_bot_sellers_post) | **POST** /api/bot-sellers/ | Create Bot Seller
+[**create_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_post**](BotSellersApi.md#create_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_post) | **POST** /api/bot-sellers/{bot_seller_id}/matchers | Create Bot Seller Matcher
+[**delete_bot_seller_api_bot_sellers_bot_seller_id_delete**](BotSellersApi.md#delete_bot_seller_api_bot_sellers_bot_seller_id_delete) | **DELETE** /api/bot-sellers/{bot_seller_id} | Delete Bot Seller
+[**delete_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_delete**](BotSellersApi.md#delete_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_delete) | **DELETE** /api/bot-sellers/{bot_seller_id}/matchers/{matcher_id} | Delete Bot Seller Matcher
+[**get_bot_seller_api_bot_sellers_bot_seller_id_get**](BotSellersApi.md#get_bot_seller_api_bot_sellers_bot_seller_id_get) | **GET** /api/bot-sellers/{bot_seller_id} | Get Bot Seller
+[**list_bot_seller_matchers_api_bot_sellers_bot_seller_id_matchers_get**](BotSellersApi.md#list_bot_seller_matchers_api_bot_sellers_bot_seller_id_matchers_get) | **GET** /api/bot-sellers/{bot_seller_id}/matchers | List Bot Seller Matchers
+[**list_bot_sellers_api_bot_sellers_get**](BotSellersApi.md#list_bot_sellers_api_bot_sellers_get) | **GET** /api/bot-sellers/ | List Bot Sellers
+[**update_bot_seller_api_bot_sellers_bot_seller_id_put**](BotSellersApi.md#update_bot_seller_api_bot_sellers_bot_seller_id_put) | **PUT** /api/bot-sellers/{bot_seller_id} | Update Bot Seller
+[**update_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_put**](BotSellersApi.md#update_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_put) | **PUT** /api/bot-sellers/{bot_seller_id}/matchers/{matcher_id} | Update Bot Seller Matcher
 
 
-# **create_bot_seller_bot_sellers_post**
-> BotSellerRead create_bot_seller_bot_sellers_post(bot_seller_create)
+# **create_bot_seller_api_bot_sellers_post**
+> BotSellerRead create_bot_seller_api_bot_sellers_post(bot_seller_create)
 
 Create Bot Seller
 
@@ -54,11 +54,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Create Bot Seller
-        api_response = api_instance.create_bot_seller_bot_sellers_post(bot_seller_create)
-        print("The response of BotSellersApi->create_bot_seller_bot_sellers_post:\n")
+        api_response = api_instance.create_bot_seller_api_bot_sellers_post(bot_seller_create)
+        print("The response of BotSellersApi->create_bot_seller_api_bot_sellers_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BotSellersApi->create_bot_seller_bot_sellers_post: %s\n" % e)
+        print("Exception when calling BotSellersApi->create_bot_seller_api_bot_sellers_post: %s\n" % e)
 ```
 
 
@@ -92,8 +92,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_post**
-> SellerMatcherRead create_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_post(bot_seller_id, seller_matcher_create)
+# **create_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_post**
+> SellerMatcherRead create_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_post(bot_seller_id, seller_matcher_create)
 
 Create Bot Seller Matcher
 
@@ -132,11 +132,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Create Bot Seller Matcher
-        api_response = api_instance.create_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_post(bot_seller_id, seller_matcher_create)
-        print("The response of BotSellersApi->create_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_post:\n")
+        api_response = api_instance.create_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_post(bot_seller_id, seller_matcher_create)
+        print("The response of BotSellersApi->create_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BotSellersApi->create_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_post: %s\n" % e)
+        print("Exception when calling BotSellersApi->create_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_post: %s\n" % e)
 ```
 
 
@@ -171,8 +171,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_bot_seller_bot_sellers_bot_seller_id_delete**
-> object delete_bot_seller_bot_sellers_bot_seller_id_delete(bot_seller_id)
+# **delete_bot_seller_api_bot_sellers_bot_seller_id_delete**
+> object delete_bot_seller_api_bot_sellers_bot_seller_id_delete(bot_seller_id)
 
 Delete Bot Seller
 
@@ -208,11 +208,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Delete Bot Seller
-        api_response = api_instance.delete_bot_seller_bot_sellers_bot_seller_id_delete(bot_seller_id)
-        print("The response of BotSellersApi->delete_bot_seller_bot_sellers_bot_seller_id_delete:\n")
+        api_response = api_instance.delete_bot_seller_api_bot_sellers_bot_seller_id_delete(bot_seller_id)
+        print("The response of BotSellersApi->delete_bot_seller_api_bot_sellers_bot_seller_id_delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BotSellersApi->delete_bot_seller_bot_sellers_bot_seller_id_delete: %s\n" % e)
+        print("Exception when calling BotSellersApi->delete_bot_seller_api_bot_sellers_bot_seller_id_delete: %s\n" % e)
 ```
 
 
@@ -246,8 +246,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_delete**
-> object delete_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_delete(bot_seller_id, matcher_id)
+# **delete_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_delete**
+> object delete_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_delete(bot_seller_id, matcher_id)
 
 Delete Bot Seller Matcher
 
@@ -284,11 +284,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Delete Bot Seller Matcher
-        api_response = api_instance.delete_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_delete(bot_seller_id, matcher_id)
-        print("The response of BotSellersApi->delete_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_delete:\n")
+        api_response = api_instance.delete_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_delete(bot_seller_id, matcher_id)
+        print("The response of BotSellersApi->delete_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BotSellersApi->delete_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_delete: %s\n" % e)
+        print("Exception when calling BotSellersApi->delete_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_delete: %s\n" % e)
 ```
 
 
@@ -323,8 +323,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bot_seller_bot_sellers_bot_seller_id_get**
-> BotSellerRead get_bot_seller_bot_sellers_bot_seller_id_get(bot_seller_id)
+# **get_bot_seller_api_bot_sellers_bot_seller_id_get**
+> BotSellerRead get_bot_seller_api_bot_sellers_bot_seller_id_get(bot_seller_id)
 
 Get Bot Seller
 
@@ -361,11 +361,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Bot Seller
-        api_response = api_instance.get_bot_seller_bot_sellers_bot_seller_id_get(bot_seller_id)
-        print("The response of BotSellersApi->get_bot_seller_bot_sellers_bot_seller_id_get:\n")
+        api_response = api_instance.get_bot_seller_api_bot_sellers_bot_seller_id_get(bot_seller_id)
+        print("The response of BotSellersApi->get_bot_seller_api_bot_sellers_bot_seller_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BotSellersApi->get_bot_seller_bot_sellers_bot_seller_id_get: %s\n" % e)
+        print("Exception when calling BotSellersApi->get_bot_seller_api_bot_sellers_bot_seller_id_get: %s\n" % e)
 ```
 
 
@@ -399,8 +399,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_bot_seller_matchers_bot_sellers_bot_seller_id_matchers_get**
-> List[SellerMatcherRead] list_bot_seller_matchers_bot_sellers_bot_seller_id_matchers_get(bot_seller_id)
+# **list_bot_seller_matchers_api_bot_sellers_bot_seller_id_matchers_get**
+> List[SellerMatcherRead] list_bot_seller_matchers_api_bot_sellers_bot_seller_id_matchers_get(bot_seller_id)
 
 List Bot Seller Matchers
 
@@ -437,11 +437,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # List Bot Seller Matchers
-        api_response = api_instance.list_bot_seller_matchers_bot_sellers_bot_seller_id_matchers_get(bot_seller_id)
-        print("The response of BotSellersApi->list_bot_seller_matchers_bot_sellers_bot_seller_id_matchers_get:\n")
+        api_response = api_instance.list_bot_seller_matchers_api_bot_sellers_bot_seller_id_matchers_get(bot_seller_id)
+        print("The response of BotSellersApi->list_bot_seller_matchers_api_bot_sellers_bot_seller_id_matchers_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BotSellersApi->list_bot_seller_matchers_bot_sellers_bot_seller_id_matchers_get: %s\n" % e)
+        print("Exception when calling BotSellersApi->list_bot_seller_matchers_api_bot_sellers_bot_seller_id_matchers_get: %s\n" % e)
 ```
 
 
@@ -475,8 +475,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_bot_sellers_bot_sellers_get**
-> List[BotSellerRead] list_bot_sellers_bot_sellers_get()
+# **list_bot_sellers_api_bot_sellers_get**
+> List[BotSellerRead] list_bot_sellers_api_bot_sellers_get()
 
 List Bot Sellers
 
@@ -512,11 +512,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # List Bot Sellers
-        api_response = api_instance.list_bot_sellers_bot_sellers_get()
-        print("The response of BotSellersApi->list_bot_sellers_bot_sellers_get:\n")
+        api_response = api_instance.list_bot_sellers_api_bot_sellers_get()
+        print("The response of BotSellersApi->list_bot_sellers_api_bot_sellers_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BotSellersApi->list_bot_sellers_bot_sellers_get: %s\n" % e)
+        print("Exception when calling BotSellersApi->list_bot_sellers_api_bot_sellers_get: %s\n" % e)
 ```
 
 
@@ -546,8 +546,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_bot_seller_bot_sellers_bot_seller_id_put**
-> BotSellerRead update_bot_seller_bot_sellers_bot_seller_id_put(bot_seller_id, bot_seller_update)
+# **update_bot_seller_api_bot_sellers_bot_seller_id_put**
+> BotSellerRead update_bot_seller_api_bot_sellers_bot_seller_id_put(bot_seller_id, bot_seller_update)
 
 Update Bot Seller
 
@@ -586,11 +586,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Update Bot Seller
-        api_response = api_instance.update_bot_seller_bot_sellers_bot_seller_id_put(bot_seller_id, bot_seller_update)
-        print("The response of BotSellersApi->update_bot_seller_bot_sellers_bot_seller_id_put:\n")
+        api_response = api_instance.update_bot_seller_api_bot_sellers_bot_seller_id_put(bot_seller_id, bot_seller_update)
+        print("The response of BotSellersApi->update_bot_seller_api_bot_sellers_bot_seller_id_put:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BotSellersApi->update_bot_seller_bot_sellers_bot_seller_id_put: %s\n" % e)
+        print("Exception when calling BotSellersApi->update_bot_seller_api_bot_sellers_bot_seller_id_put: %s\n" % e)
 ```
 
 
@@ -625,8 +625,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_put**
-> SellerMatcherRead update_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_put(bot_seller_id, matcher_id, seller_matcher_update)
+# **update_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_put**
+> SellerMatcherRead update_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_put(bot_seller_id, matcher_id, seller_matcher_update)
 
 Update Bot Seller Matcher
 
@@ -666,11 +666,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Update Bot Seller Matcher
-        api_response = api_instance.update_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_put(bot_seller_id, matcher_id, seller_matcher_update)
-        print("The response of BotSellersApi->update_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_put:\n")
+        api_response = api_instance.update_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_put(bot_seller_id, matcher_id, seller_matcher_update)
+        print("The response of BotSellersApi->update_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_put:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BotSellersApi->update_bot_seller_matcher_bot_sellers_bot_seller_id_matchers_matcher_id_put: %s\n" % e)
+        print("Exception when calling BotSellersApi->update_bot_seller_matcher_api_bot_sellers_bot_seller_id_matchers_matcher_id_put: %s\n" % e)
 ```
 
 

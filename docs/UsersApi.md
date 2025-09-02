@@ -6,14 +6,15 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**claim_daily_bonus_users_me_daily_bonus_post**](UsersApi.md#claim_daily_bonus_users_me_daily_bonus_post) | **POST** /users/me/daily-bonus | Claim Daily Bonus
 [**get_api_keys_users_me_api_keys_get**](UsersApi.md#get_api_keys_users_me_api_keys_get) | **GET** /users/me/api-keys | Get Api Keys
+[**get_current_user_api_users_me_get**](UsersApi.md#get_current_user_api_users_me_get) | **GET** /api/users/me | Get Current User
 [**get_current_user_purchases_users_me_purchases_get**](UsersApi.md#get_current_user_purchases_users_me_purchases_get) | **GET** /users/me/purchases | Get Current User Purchases
 [**get_current_user_sales_users_me_sales_get**](UsersApi.md#get_current_user_sales_users_me_sales_get) | **GET** /users/me/sales | Get Current User Sales
 [**get_daily_bonus_status_users_me_daily_bonus_get**](UsersApi.md#get_daily_bonus_status_users_me_daily_bonus_get) | **GET** /users/me/daily-bonus | Get Daily Bonus Status
 [**get_transactions_transactions_get**](UsersApi.md#get_transactions_transactions_get) | **GET** /transactions | Get Transactions
-[**get_user_users_user_id_get**](UsersApi.md#get_user_users_user_id_get) | **GET** /users/{user_id} | Get User
-[**get_users_users_get**](UsersApi.md#get_users_users_get) | **GET** /users/ | Get Users
+[**get_user_api_users_user_id_get**](UsersApi.md#get_user_api_users_user_id_get) | **GET** /api/users/{user_id} | Get User
+[**get_users_api_users_get**](UsersApi.md#get_users_api_users_get) | **GET** /api/users/ | Get Users
 [**update_api_keys_users_me_api_keys_put**](UsersApi.md#update_api_keys_users_me_api_keys_put) | **PUT** /users/me/api-keys | Update Api Keys
-[**update_current_user_users_me_put**](UsersApi.md#update_current_user_users_me_put) | **PUT** /users/me | Update Current User
+[**update_current_user_api_users_me_put**](UsersApi.md#update_current_user_api_users_me_put) | **PUT** /api/users/me | Update Current User
 [**users_current_user_users_me_get**](UsersApi.md#users_current_user_users_me_get) | **GET** /users/me | Users:Current User
 [**users_delete_user_users_id_delete**](UsersApi.md#users_delete_user_users_id_delete) | **DELETE** /users/{id} | Users:Delete User
 [**users_patch_current_user_users_me_patch**](UsersApi.md#users_patch_current_user_users_me_patch) | **PATCH** /users/me | Users:Patch Current User
@@ -143,6 +144,77 @@ This endpoint does not need any parameter.
 ### Return type
 
 **object**
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_current_user_api_users_me_get**
+> UserReadPrivate get_current_user_api_users_me_get()
+
+Get Current User
+
+Get current user profile
+
+### Example
+
+* OAuth Authentication (OAuth2PasswordBearer):
+
+```python
+import infonomy_client
+from infonomy_client.models.user_read_private import UserReadPrivate
+from infonomy_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = infonomy_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with infonomy_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = infonomy_client.UsersApi(api_client)
+
+    try:
+        # Get Current User
+        api_response = api_instance.get_current_user_api_users_me_get()
+        print("The response of UsersApi->get_current_user_api_users_me_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UsersApi->get_current_user_api_users_me_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserReadPrivate**](UserReadPrivate.md)
 
 ### Authorization
 
@@ -462,8 +534,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_user_users_user_id_get**
-> UserRead get_user_users_user_id_get(user_id)
+# **get_user_api_users_user_id_get**
+> UserRead get_user_api_users_user_id_get(user_id)
 
 Get User
 
@@ -493,11 +565,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Get User
-        api_response = api_instance.get_user_users_user_id_get(user_id)
-        print("The response of UsersApi->get_user_users_user_id_get:\n")
+        api_response = api_instance.get_user_api_users_user_id_get(user_id)
+        print("The response of UsersApi->get_user_api_users_user_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->get_user_users_user_id_get: %s\n" % e)
+        print("Exception when calling UsersApi->get_user_api_users_user_id_get: %s\n" % e)
 ```
 
 
@@ -531,8 +603,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_users_users_get**
-> List[UserRead] get_users_users_get()
+# **get_users_api_users_get**
+> List[UserRead] get_users_api_users_get()
 
 Get Users
 
@@ -559,11 +631,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Users
-        api_response = api_instance.get_users_users_get()
-        print("The response of UsersApi->get_users_users_get:\n")
+        api_response = api_instance.get_users_api_users_get()
+        print("The response of UsersApi->get_users_api_users_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->get_users_users_get: %s\n" % e)
+        print("Exception when calling UsersApi->get_users_api_users_get: %s\n" % e)
 ```
 
 
@@ -668,8 +740,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_current_user_users_me_put**
-> UserReadPrivate update_current_user_users_me_put(user_update)
+# **update_current_user_api_users_me_put**
+> UserReadPrivate update_current_user_api_users_me_put(user_update)
 
 Update Current User
 
@@ -707,11 +779,11 @@ with infonomy_client.ApiClient(configuration) as api_client:
 
     try:
         # Update Current User
-        api_response = api_instance.update_current_user_users_me_put(user_update)
-        print("The response of UsersApi->update_current_user_users_me_put:\n")
+        api_response = api_instance.update_current_user_api_users_me_put(user_update)
+        print("The response of UsersApi->update_current_user_api_users_me_put:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersApi->update_current_user_users_me_put: %s\n" % e)
+        print("Exception when calling UsersApi->update_current_user_api_users_me_put: %s\n" % e)
 ```
 
 

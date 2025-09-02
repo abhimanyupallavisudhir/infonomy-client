@@ -1,13 +1,13 @@
 [project]
 name = "infonomy_client"
 version = "1.0.0"
-description = "Q&A Platform API"
+description = "Infonomy"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
 ]
 license = "MIT"
 readme = "README.md"
-keywords = ["OpenAPI", "OpenAPI-Generator", "Q&A Platform API"]
+keywords = ["OpenAPI", "OpenAPI-Generator", "Infonomy"]
 requires-python = ">=3.9"
 
 dependencies = [
@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
+Repository = "https://github.com/abhimanyupallavisudhir/infonomy-client"
 
 [tool.poetry]
 requires-poetry = ">=2.0"

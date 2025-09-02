@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
 **default_child_llm** | [**LLMBuyerType**](LLMBuyerType.md) |  | 
-**default_max_budget** | **float** |  | 
 **num_queries** | **Dict[str, int]** |  | 
 **num_inspected** | **Dict[str, int]** |  | 
 **num_purchased** | **Dict[str, int]** |  | 

@@ -5,8 +5,8 @@
 README.md
 docs/AuthApi.md
 docs/BearerResponse.md
-docs/BodyResetForgotPasswordAuthForgotPasswordPost.md
-docs/BodyResetResetPasswordAuthResetPasswordPost.md
+docs/BodyResetForgotPasswordApiAuthForgotPasswordPost.md
+docs/BodyResetResetPasswordApiAuthResetPasswordPost.md
 docs/BodyVerifyRequestTokenAuthRequestVerifyTokenPost.md
 docs/BodyVerifyVerifyAuthVerifyPost.md
 docs/BotSellerCreate.md
@@ -17,7 +17,6 @@ docs/DecisionContextCreateNonRecursive.md
 docs/DecisionContextRead.md
 docs/DecisionContextUpdateNonRecursive.md
 docs/DecisionContextsApi.md
-docs/DefaultApi.md
 docs/Detail.md
 docs/ErrorModel.md
 docs/HTTPValidationError.md
@@ -34,11 +33,12 @@ docs/InfoOfferUpdate.md
 docs/InspectionApi.md
 docs/LLMBuyerType.md
 docs/ProfilesApi.md
-docs/ReadInfoOffersForDecisionContextQuestionsContextIdAnswersGet200ResponseInner.md
-docs/ResponseReadInfoOfferQuestionsContextIdAnswersInfoOfferIdGet.md
+docs/ReadInfoOffersForDecisionContextApiQuestionsContextIdAnswersGet200ResponseInner.md
+docs/ResponseReadInfoOfferApiQuestionsContextIdAnswersInfoOfferIdGet.md
 docs/SellerMatcherCreate.md
 docs/SellerMatcherRead.md
 docs/SellerMatcherUpdate.md
+docs/UiApi.md
 docs/UserCreate.md
 docs/UserRead.md
 docs/UserReadPrivate.md
@@ -52,10 +52,10 @@ infonomy_client/api/__init__.py
 infonomy_client/api/auth_api.py
 infonomy_client/api/bot_sellers_api.py
 infonomy_client/api/decision_contexts_api.py
-infonomy_client/api/default_api.py
 infonomy_client/api/inbox_api.py
 infonomy_client/api/inspection_api.py
 infonomy_client/api/profiles_api.py
+infonomy_client/api/ui_api.py
 infonomy_client/api/users_api.py
 infonomy_client/api_client.py
 infonomy_client/api_response.py
@@ -63,8 +63,8 @@ infonomy_client/configuration.py
 infonomy_client/exceptions.py
 infonomy_client/models/__init__.py
 infonomy_client/models/bearer_response.py
-infonomy_client/models/body_reset_forgot_password_auth_forgot_password_post.py
-infonomy_client/models/body_reset_reset_password_auth_reset_password_post.py
+infonomy_client/models/body_reset_forgot_password_api_auth_forgot_password_post.py
+infonomy_client/models/body_reset_reset_password_api_auth_reset_password_post.py
 infonomy_client/models/body_verify_request_token_auth_request_verify_token_post.py
 infonomy_client/models/body_verify_verify_auth_verify_post.py
 infonomy_client/models/bot_seller_create.py
@@ -86,8 +86,8 @@ infonomy_client/models/info_offer_read_private.py
 infonomy_client/models/info_offer_read_public.py
 infonomy_client/models/info_offer_update.py
 infonomy_client/models/llm_buyer_type.py
-infonomy_client/models/read_info_offers_for_decision_context_questions_context_id_answers_get200_response_inner.py
-infonomy_client/models/response_read_info_offer_questions_context_id_answers_info_offer_id_get.py
+infonomy_client/models/read_info_offers_for_decision_context_api_questions_context_id_answers_get200_response_inner.py
+infonomy_client/models/response_read_info_offer_api_questions_context_id_answers_info_offer_id_get.py
 infonomy_client/models/seller_matcher_create.py
 infonomy_client/models/seller_matcher_read.py
 infonomy_client/models/seller_matcher_update.py

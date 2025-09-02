@@ -17,28 +17,30 @@ from inspect import getfullargspec
 import json
 import pprint
 import re  # noqa: F401
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Optional
+from infonomy_client.models.info_offer_read_private import InfoOfferReadPrivate
+from infonomy_client.models.info_offer_read_public import InfoOfferReadPublic
 from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
-VALIDATIONERRORLOCINNER_ANY_OF_SCHEMAS = ["int", "str"]
+RESPONSEREADINFOOFFERAPIQUESTIONSCONTEXTIDANSWERSINFOOFFERIDGET_ANY_OF_SCHEMAS = ["InfoOfferReadPrivate", "InfoOfferReadPublic"]
 
-class ValidationErrorLocInner(BaseModel):
+class ResponseReadInfoOfferApiQuestionsContextIdAnswersInfoOfferIdGet(BaseModel):
     """
-    ValidationErrorLocInner
+    ResponseReadInfoOfferApiQuestionsContextIdAnswersInfoOfferIdGet
     """
 
-    # data type: str
-    anyof_schema_1_validator: Optional[StrictStr] = None
-    # data type: int
-    anyof_schema_2_validator: Optional[StrictInt] = None
+    # data type: InfoOfferReadPrivate
+    anyof_schema_1_validator: Optional[InfoOfferReadPrivate] = None
+    # data type: InfoOfferReadPublic
+    anyof_schema_2_validator: Optional[InfoOfferReadPublic] = None
     if TYPE_CHECKING:
-        actual_instance: Optional[Union[int, str]] = None
+        actual_instance: Optional[Union[InfoOfferReadPrivate, InfoOfferReadPublic]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: Set[str] = { "int", "str" }
+    any_of_schemas: Set[str] = { "InfoOfferReadPrivate", "InfoOfferReadPublic" }
 
     model_config = {
         "validate_assignment": True,
@@ -57,23 +59,23 @@ class ValidationErrorLocInner(BaseModel):
 
     @field_validator('actual_instance')
     def actual_instance_must_validate_anyof(cls, v):
-        instance = ValidationErrorLocInner.model_construct()
+        instance = ResponseReadInfoOfferApiQuestionsContextIdAnswersInfoOfferIdGet.model_construct()
         error_messages = []
-        # validate data type: str
-        try:
-            instance.anyof_schema_1_validator = v
+        # validate data type: InfoOfferReadPrivate
+        if not isinstance(v, InfoOfferReadPrivate):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `InfoOfferReadPrivate`")
+        else:
             return v
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # validate data type: int
-        try:
-            instance.anyof_schema_2_validator = v
+
+        # validate data type: InfoOfferReadPublic
+        if not isinstance(v, InfoOfferReadPublic):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `InfoOfferReadPublic`")
+        else:
             return v
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
+
         if error_messages:
             # no match
-            raise ValueError("No match found when setting the actual_instance in ValidationErrorLocInner with anyOf schemas: int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting the actual_instance in ResponseReadInfoOfferApiQuestionsContextIdAnswersInfoOfferIdGet with anyOf schemas: InfoOfferReadPrivate, InfoOfferReadPublic. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -86,28 +88,22 @@ class ValidationErrorLocInner(BaseModel):
         """Returns the object represented by the json string"""
         instance = cls.model_construct()
         error_messages = []
-        # deserialize data into str
+        # anyof_schema_1_validator: Optional[InfoOfferReadPrivate] = None
         try:
-            # validation
-            instance.anyof_schema_1_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.anyof_schema_1_validator
+            instance.actual_instance = InfoOfferReadPrivate.from_json(json_str)
             return instance
         except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into int
+             error_messages.append(str(e))
+        # anyof_schema_2_validator: Optional[InfoOfferReadPublic] = None
         try:
-            # validation
-            instance.anyof_schema_2_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.anyof_schema_2_validator
+            instance.actual_instance = InfoOfferReadPublic.from_json(json_str)
             return instance
         except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
+             error_messages.append(str(e))
 
         if error_messages:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into ValidationErrorLocInner with anyOf schemas: int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into ResponseReadInfoOfferApiQuestionsContextIdAnswersInfoOfferIdGet with anyOf schemas: InfoOfferReadPrivate, InfoOfferReadPublic. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -121,7 +117,7 @@ class ValidationErrorLocInner(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], int, str]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], InfoOfferReadPrivate, InfoOfferReadPublic]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None
